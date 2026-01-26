@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка и услуги — Moslistva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { 'primary-green': '#2D5D42', 'dark-green': '#1B3022', 'gold-accent': '#FFB800', 'light-gray': '#F8F9FA' } } } }
+    </script>
+</head>
+<body class="bg-light-gray">
+    <div id="header-top-res"></div>
+    <div id="nav-res" class="sticky top-0 z-50"></div>
+
+    <main class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-black text-dark-green mb-12 uppercase">Доставка и оплата</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-3xl shadow-lg border-b-4 border-gold-accent">
+                    <div class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mb-6 text-primary-green text-3xl">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Доставка</h3>
+                    <p class="text-gray-600 leading-relaxed">Собственный автопарк. Доставляем по Москве и Московской области в день заказа или на следующий день.</p>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-lg border-b-4 border-primary-green">
+                    <div class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mb-6 text-primary-green text-3xl">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Самовывоз</h3>
+                    <p class="text-gray-600 leading-relaxed">Вы можете забрать товар самостоятельно с наших складов: ТСК "Тракт-Терминал" или 41-й км МКАД.</p>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-lg border-b-4 border-gold-accent">
+                    <div class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mb-6 text-primary-green text-3xl">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Оплата</h3>
+                    <p class="text-gray-600 leading-relaxed">Принимаем наличные, оплату картой и безналичный расчет для юридических лиц с НДС.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-res"></div>
+    <script src="script.js"></script>
+</body>
+</html>

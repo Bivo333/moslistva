@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея — Moslistva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    colors: { 
+                        'primary-green': '#2D5D42', 
+                        'dark-green': '#1B3022', 
+                        'gold-accent': '#FFB800', 
+                        'light-gray': '#F8F9FA' 
+                    } 
+                } 
+            } 
+        }
+    </script>
+</head>
+<body class="bg-light-gray">
+    <div id="header-top-res"></div>
+    <div id="nav-res" class="sticky top-0 z-50"></div>
+
+    <main class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-black text-dark-green mb-12 uppercase tracking-tighter">Наши работы</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="product-card rounded-2xl overflow-hidden group">
+                    <div class="aspect-[4/3] overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1510629954389-c1e0da47d415?w=600" 
+                             alt="Работа 1" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-black text-gray-800 uppercase tracking-tight">Терраса из лиственницы</h3>
+                        <p class="text-xs text-gray-500 mt-2 font-bold uppercase tracking-widest">Объект: МО, Истра</p>
+                    </div>
+                </div>
+
+                <div class="product-card rounded-2xl overflow-hidden group">
+                    <div class="aspect-[4/3] overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1449156001935-d2863fb72690?w=600" 
+                             alt="Работа 2" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-black text-gray-800 uppercase tracking-tight">Фасад (Планкен)</h3>
+                        <p class="text-xs text-gray-500 mt-2 font-bold uppercase tracking-widest">Объект: Тракт-Терминал</p>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </main>
+
+    <div id="footer-res"></div>
+    <script src="script.js"></script>
+</body>
+</html>
