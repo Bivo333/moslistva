@@ -12,9 +12,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary-green': '#4CAF50',
-                        'dark-green': '#2D5D42',
-                        'light-gray': '#F5F5F5',
+                        'primary-green': '#2D5D42',
+                        'dark-green': '#1B3022',
+                        'gold-accent': '#FFB800',
+                        'light-gray': '#F8F9FA',
                     }
                 }
             }
@@ -23,250 +24,222 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background-color: #F8F9FA;
         }
+
+        /* Навигация: эффект красивого выделения */
+        .nav-link {
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: #FFB800 !important;
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
         .nav-link.active {
-            background-color: #FCD34D;
-            color: #1F2937;
+            background-color: #1B3022 !important;
+            color: #FFB800 !important;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 184, 0, 0.2);
+        }
+
+        /* Объемные карточки */
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: white;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-light-gray">
 
-    <!-- Top Header -->
-    <header class="bg-white">
+    <header class="bg-white border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-3 hover:opacity-80 transition">
-                    <img src="images/logo.png" alt="Moslistva" class="h-12 w-12 object-contain">
-                    <span class="text-primary-green font-bold text-xl">Moslistva</span>
+            <div class="flex justify-between items-center py-5">
+                <a href="#" class="flex items-center gap-4 hover:opacity-80 transition">
+                    <img src="images/logo.png" alt="Moslistva" class="h-14 w-14 object-contain">
+                    <span class="text-primary-green font-black text-2xl tracking-tight">Moslistva</span>
                 </a>
                 
-                <!-- Contact Info -->
                 <div class="text-right">
-                    <div class="text-xs text-gray-400 mb-1">Ежедневно с 9 до 19</div>
-                    <div class="text-lg font-bold text-gray-700 mb-1">+7(977) 500 78 79</div>
-                    <a href="#" class="text-sm text-gray-500 hover:text-primary-green">Заказать звонок</a>
+                    <div class="text-xs text-gray-400 font-medium uppercase tracking-widest mb-1">Ежедневно 9:00 – 19:00</div>
+                    <div class="text-xl font-black text-gray-800 tracking-tighter">+7(977) 500 78 79</div>
+                    <a href="#" class="text-sm text-primary-green font-bold hover:text-dark-green underline decoration-2 underline-offset-4">Заказать звонок</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Navigation Bar -->
-    <nav class="bg-primary-green">
+    <nav class="bg-primary-green sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                <!-- Navigation Links -->
-                <ul class="flex items-center space-x-1">
-                    <li><a href="#" class="nav-link active text-white uppercase text-sm font-semibold px-5 py-4 hover:bg-yellow-400 hover:text-gray-800 transition">КАТАЛОГ</a></li>
-                    <li><a href="#" class="nav-link text-white uppercase text-sm font-semibold px-5 py-4 hover:bg-yellow-400 hover:text-gray-800 transition">ЦЕНЫ</a></li>
-                    <li><a href="#" class="nav-link text-white uppercase text-sm font-semibold px-5 py-4 hover:bg-yellow-400 hover:text-gray-800 transition">ДОСТАВКА</a></li>
-                    <li><a href="#" class="nav-link text-white uppercase text-sm font-semibold px-5 py-4 hover:bg-yellow-400 hover:text-gray-800 transition">ГАЛЕРЕЯ</a></li>
-                    <li><a href="#" class="nav-link text-white uppercase text-sm font-semibold px-5 py-4 hover:bg-yellow-400 hover:text-gray-800 transition">КОНТАКТЫ</a></li>
+            <div class="flex justify-between items-center h-16">
+                <ul class="flex items-center gap-1">
+                    <li><a href="#" class="nav-link active uppercase text-xs font-black px-5 py-2.5">КАТАЛОГ</a></li>
+                    <li><a href="#" class="nav-link uppercase text-xs font-black px-5 py-2.5">ЦЕНЫ</a></li>
+                    <li><a href="#" class="nav-link uppercase text-xs font-black px-5 py-2.5">ДОСТАВКА</a></li>
+                    <li><a href="#" class="nav-link uppercase text-xs font-black px-5 py-2.5">ГАЛЕРЕЯ</a></li>
+                    <li><a href="#" class="nav-link uppercase text-xs font-black px-5 py-2.5">КОНТАКТЫ</a></li>
                 </ul>
                 
-                <!-- Utility Icons -->
-                <div class="flex items-center gap-6">
-                    <i class="fas fa-search text-white text-lg cursor-pointer hover:text-gray-200"></i>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-shopping-cart text-white text-lg"></i>
-                        <span id="cart-total" class="text-white text-sm font-semibold">0 руб</span>
+                <div class="flex items-center gap-8 text-white">
+                    <i class="fas fa-search cursor-pointer hover:text-gold-accent transition-colors"></i>
+                    <div class="flex items-center gap-3 group cursor-pointer">
+                        <div class="relative">
+                            <i class="fas fa-shopping-cart text-lg group-hover:text-gold-accent transition-colors"></i>
+                            <span class="absolute -top-2 -right-2 bg-gold-accent text-dark-green text-[10px] font-bold px-1.5 rounded-full">0</span>
+                        </div>
+                        <span class="text-sm font-bold group-hover:text-gold-accent transition-colors">0 руб</span>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative h-[500px] bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80');">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-end pb-20 pl-8">
-            <div class="text-white mb-8">
-                <h1 class="text-5xl font-bold mb-4 leading-tight">Изделия из лиственницы в Москве и Московской области: палубная доска, планкен, вагонка</h1>
-                <p class="text-xl mb-8">Для вашего дома в Московской области</p>
-                <a href="#" class="inline-block bg-primary-green text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 transition shadow-lg text-base">
+    <section class="relative h-[550px] bg-cover bg-center" style="background-image: linear-gradient(rgba(27,48,34,0.4), rgba(27,48,34,0.4)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+            <div class="text-white max-w-3xl">
+                <h1 class="text-6xl font-black mb-6 leading-[1.1] tracking-tight">Изделия из лиственницы в Москве</h1>
+                <p class="text-2xl mb-10 text-white/90 font-medium">Премиальное качество для вашего дома и участка</p>
+                <a href="#" class="inline-block bg-gold-accent text-dark-green px-10 py-5 rounded-xl font-black hover:bg-white transition-all shadow-2xl hover:scale-105 active:scale-95 uppercase tracking-wider text-sm">
                     Смотреть каталог
                 </a>
             </div>
         </div>
-        
-        <!-- Pagination Dots -->
-        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3">
-            <span class="w-2.5 h-2.5 rounded-full bg-white opacity-50"></span>
-            <span class="w-3.5 h-3.5 rounded-full bg-white"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-white opacity-50"></span>
+    </section>
+
+    <section class="py-20 bg-light-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center md:text-left">
+                <h2 class="text-4xl font-black text-gray-900 mb-4 tracking-tighter uppercase">Пиломатериалы из лиственницы</h2>
+                <div class="h-1.5 w-24 bg-gold-accent rounded-full mx-auto md:mx-0"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="product-card rounded-2xl p-8 group">
+                    <div class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-green transition-colors">
+                        <i class="fas fa-border-all text-primary-green text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-800 mb-4 uppercase tracking-tight">ПАЛУБНАЯ ДОСКА</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-600 font-medium">
+                            <i class="fas fa-check text-gold-accent"></i> Из лиственницы
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="product-card rounded-2xl p-8 group">
+                    <div class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-green transition-colors">
+                        <i class="fas fa-grip-lines text-primary-green text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-800 mb-4 uppercase tracking-tight">ПЛАНКЕН</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-600 font-medium">
+                            <i class="fas fa-check text-gold-accent"></i> Прямой и скошенный
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="product-card rounded-2xl p-8 group">
+                    <div class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-green transition-colors">
+                        <i class="fas fa-th text-primary-green text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-800 mb-4 uppercase tracking-tight">ТЕРРАСНАЯ ДОСКА</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-600 font-medium">
+                            <i class="fas fa-check text-gold-accent"></i> Вельвет
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="product-card rounded-2xl p-8 group border-2 border-gold-accent/20">
+                    <div class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-green transition-colors">
+                        <i class="fas fa-align-justify text-primary-green text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-800 mb-4 uppercase tracking-tight">ВАГОНКА</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-600 font-medium"><i class="fas fa-check text-gold-accent"></i> Лиственница</li>
+                        <li class="flex items-center gap-3 text-gray-600 font-medium"><i class="fas fa-check text-gold-accent"></i> Липа</li>
+                        <li class="flex items-center gap-3 text-gray-600 font-medium"><i class="fas fa-check text-gold-accent"></i> Кедр</li>
+                    </ul>
+                </div>
+
+                <div class="product-card rounded-2xl p-8 group">
+                    <div class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-green transition-colors">
+                        <i class="fas fa-square text-primary-green text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-800 mb-4 uppercase tracking-tight">ДОСКА ПОЛА</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-600 font-medium">
+                            <i class="fas fa-check text-gold-accent"></i> Из лиственницы
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="product-card rounded-2xl p-8 group">
+                    <div class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-green transition-colors">
+                        <i class="fas fa-layer-group text-primary-green text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-800 mb-4 uppercase tracking-tight">ИМИТАЦИЯ БРУСА</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-600 font-medium">
+                            <i class="fas fa-check text-gold-accent"></i> Блок-хаус
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="product-card rounded-2xl p-8 group">
+                    <div class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-green transition-colors">
+                        <i class="fas fa-cube text-primary-green text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-800 mb-4 uppercase tracking-tight">БРУС, ПОГОНАЖ</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-600 font-medium">
+                            <i class="fas fa-check text-gold-accent"></i> Профилированный
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="product-card rounded-2xl p-8 group">
+                    <div class="w-16 h-16 bg-primary-green/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-green transition-colors">
+                        <i class="fas fa-angle-right text-primary-green text-2xl group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-gray-800 mb-4 uppercase tracking-tight">ПЛИНТУС, УГОЛОК</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-600 font-medium">
+                            <i class="fas fa-check text-gold-accent"></i> Из лиственницы
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- Main Content Section -->
-    <section class="bg-light-gray py-12">
+    <footer class="bg-dark-green text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Title -->
-            <div class="mb-10">
-                <h2 class="text-4xl font-bold text-gray-800 mb-2">ПИЛОМАТЕРИАЛЫ ИЗ ЛИСТВЕННИЦЫ</h2>
-                <p class="text-lg text-gray-700">Для вашего дома и участка области</p>
-            </div>
-
-            <!-- Product Cards Grid -->
-            <div class="grid grid-cols-4 gap-6 mb-12">
-                <!-- Верхний ряд -->
-                <!-- Card 1: Палубная доска -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-primary-green rounded flex items-center justify-center">
-                            <i class="fas fa-border-all text-white"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800">ПАЛУБНАЯ ДОСКА</h3>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="fas fa-check text-primary-green"></i>
-                            <span>Из лиственницы</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2: Планкен -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-primary-green rounded flex items-center justify-center">
-                            <i class="fas fa-grip-lines text-white"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800">ПЛАНКЕН</h3>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="fas fa-check text-primary-green"></i>
-                            <span>Прямой и скошенный</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: Террасная доска -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-primary-green rounded flex items-center justify-center">
-                            <i class="fas fa-th text-white"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800">ТЕРРАСНАЯ ДОСКА</h3>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="fas fa-check text-primary-green"></i>
-                            <span>Вельвет</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4: Вагонка -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-primary-green rounded flex items-center justify-center">
-                            <i class="fas fa-align-justify text-white"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800">ВАГОНКА</h3>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="fas fa-check text-primary-green"></i>
-                            <span>Из лиственницы</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Нижний ряд -->
-                <!-- Card 5: Доска пола -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-primary-green rounded flex items-center justify-center">
-                            <i class="fas fa-square text-white"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800">ДОСКА ПОЛА</h3>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="fas fa-check text-primary-green"></i>
-                            <span>Из лиственницы</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6: Имитация бруса -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-primary-green rounded flex items-center justify-center">
-                            <i class="fas fa-layer-group text-white"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800">ИМИТАЦИЯ БРУСА</h3>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="fas fa-check text-primary-green"></i>
-                            <span>Блок-хаус</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 7: Брус, Погонаж -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-primary-green rounded flex items-center justify-center">
-                            <i class="fas fa-cube text-white"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800">БРУС, ПОГОНАЖ</h3>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="fas fa-check text-primary-green"></i>
-                            <span>Профилированный</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 8: Плинтус, Уголок -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-primary-green rounded flex items-center justify-center">
-                            <i class="fas fa-angle-right text-white"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800">ПЛИНТУС, УГОЛОК</h3>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="flex items-center gap-2 text-sm text-gray-600">
-                            <i class="fas fa-check text-primary-green"></i>
-                            <span>Из лиственницы</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark-green text-white py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                <!-- Left Side: Company Info -->
-                <div>
-                    <h3 class="text-2xl font-bold mb-4">Moslistva</h3>
-                    <p class="text-sm mb-2 opacity-90">Ярославское шоссе</p>
-                    <p class="text-sm mb-2 opacity-90">рынок "Тракт-Терминал"</p>
-                    <p class="text-sm mt-6 opacity-90">© 2026 moslistva.ru</p>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+                <div class="text-center md:text-left">
+                    <h3 class="text-3xl font-black mb-2 tracking-tighter text-gold-accent">Moslistva</h3>
+                    <p class="text-sm opacity-80 font-medium leading-relaxed">
+                        Ярославское шоссе<br>
+                        рынок "Тракт-Терминал"
+                    </p>
+                    <p class="text-xs mt-4 opacity-50 tracking-widest">© 2026 moslistva.ru</p>
                 </div>
                 
-                <!-- Right Side: Social Media -->
-                <div class="flex items-center gap-6">
-                    <div class="flex gap-4">
-                        <div class="w-10 h-10 bg-dark-green border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-dark-green transition cursor-pointer">
-                            <i class="fab fa-vk text-base"></i>
-                        </div>
-                        <div class="w-10 h-10 bg-dark-green border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-dark-green transition cursor-pointer">
-                            <i class="fab fa-whatsapp text-base"></i>
-                        </div>
-                    </div>
-                    <div class="text-sm opacity-90">
-                        <p>+7(977) 500 78 79</p>
-                    </div>
+                <div class="text-center md:text-right">
+                    <div class="text-3xl font-black text-gold-accent mb-2">+7(977) 500 78 79</div>
+                    <p class="text-sm opacity-70 font-medium uppercase tracking-widest">Ежедневно 9:00 – 19:00</p>
                 </div>
             </div>
         </div>
