@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Цены — Moslistva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { 'primary-green': '#2D5D42', 'dark-green': '#1B3022', 'gold-accent': '#FFB800', 'light-gray': '#F8F9FA' } } }
+        }
+    </script>
+</head>
+<body class="bg-light-gray">
+
+    <div id="header-res"></div>
+
+    <main class="py-16 min-h-[60vh]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-black text-dark-green mb-8 uppercase">Прайс-лист на изделия из лиственницы</h1>
+            
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-primary-green text-white">
+                        <tr>
+                            <th class="p-5 uppercase text-sm font-bold">Наименование</th>
+                            <th class="p-5 uppercase text-sm font-bold">Размер (мм)</th>
+                            <th class="p-5 uppercase text-sm font-bold">Сорт</th>
+                            <th class="p-5 uppercase text-sm font-bold">Цена за м²</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-5 font-bold text-gray-800">Террасная доска (Вельвет)</td>
+                            <td class="p-5 text-gray-600">28х140х3000</td>
+                            <td class="p-5"><span class="bg-gold-accent/20 text-dark-green px-3 py-1 rounded-full text-xs font-bold">Экстра</span></td>
+                            <td class="p-5 font-black text-primary-green">от 2 450 руб.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="p-5 font-bold text-gray-800">Планкен скошенный</td>
+                            <td class="p-5 text-gray-600">20х140х4000</td>
+                            <td class="p-5"><span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs font-bold">Прима</span></td>
+                            <td class="p-5 font-black text-primary-green">от 1 850 руб.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-res"></div>
+    <div id="scripts-res"></div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        // Ждем чуть-чуть, пока script.js загрузит шапку, и меняем активный пункт
+        setTimeout(() => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active'); // Убираем активность с Каталога
+                if (link.textContent.trim() === 'ЦЕНЫ') {
+                    link.classList.add('active'); // Добавляем ЦЕНАМ
+                }
+            });
+        }, 100); 
+    </script>
+
+</body>
+</html>

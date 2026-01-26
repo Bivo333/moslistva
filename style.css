@@ -12,33 +12,22 @@ body {
   color: rgba(255, 255, 255, 0.9);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-block;
+  border-radius: 8px; /* Округлость для фона при наведении */
 }
 
-/* Эффект при наведении на пункт меню */
+/* Пункт 2: Эффект при наведении (фон становится светлее) */
 .nav-link:hover {
-  color: #FFB800 !important; /* Золотой акцент */
+  color: #FFB800 !important;
+  background-color: rgba(255, 255, 255, 0.1); 
   transform: translateY(-1px);
 }
 
-/* Активный раздел: глубокий зеленый фон + золотой текст */
+/* Пункт 1: Активный раздел + Золотая полоска */
 .nav-link.active {
-  background-color: #1B3022 !important; /* Темная хвоя */
+  background-color: #1B3022 !important;
   color: #FFB800 !important;
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
   border: 1px solid rgba(255, 184, 0, 0.2);
-}
-
-/* Золотая полоска под активным пунктом */
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 2px;
-  background: #FFB800;
-  border-radius: 2px;
 }
 
 /* --- КАРТОЧКИ КАТАЛОГА (ОБЪЕМ) --- */
@@ -51,14 +40,12 @@ body {
   z-index: 1;
 }
 
-/* Эффект всплытия карточки */
 .product-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 30px 60px -12px rgba(27, 48, 34, 0.15);
   border-color: rgba(45, 93, 66, 0.1);
 }
 
-/* Внутренний глянец для объема */
 .product-card::before {
   content: '';
   position: absolute;
@@ -71,43 +58,26 @@ body {
   z-index: -1;
 }
 
-/* Анимация иконок при наведении на карточку */
 .product-card:hover i {
   transform: scale(1.1) rotate(-5deg);
 }
 
-/* --- ФУТЕР --- */
+/* --- ФУТЕР И СКРОЛЛ --- */
 footer img {
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
   transition: transform 0.5s ease;
 }
 
-footer img:hover {
-  transform: scale(1.05);
-}
-
-/* --- СКРОЛЛБАР --- */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #F1F1F1;
-}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #F1F1F1; }
 ::-webkit-scrollbar-thumb {
   background: #2D5D42;
   border-radius: 5px;
   border: 2px solid #F1F1F1;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #1B3022;
-}
 
 /* --- АДАПТИВНОСТЬ --- */
 @media (max-width: 768px) {
-  .product-card:hover {
-      transform: translateY(-5px);
-  }
-  .nav-link.active::after {
-      display: none;
-  }
+  .product-card:hover { transform: translateY(-5px); }
+  .nav-link.active::after { display: none; }
 }
