@@ -8,7 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <script>
-        tailwind.config = { theme: { extend: { colors: { 'primary-green': '#2D5D42', 'dark-green': '#1B3022', 'gold-accent': '#FFB800', 'light-gray': '#F8F9FA' } } } }
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    colors: { 
+                        'primary-green': '#2D5D42', 
+                        'dark-green': '#1B3022', 
+                        'gold-accent': '#FFB800', 
+                        'light-gray': '#F8F9FA' 
+                    } 
+                } 
+            } 
+        }
     </script>
 </head>
 <body class="bg-light-gray">
@@ -19,9 +30,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl font-black text-dark-green mb-12 uppercase">Контакты</h1>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="bg-white p-8 rounded-3xl shadow-lg border-l-8 border-gold-accent">
+            <div class="flex flex-col lg:flex-row gap-12 items-stretch">
+                
+                <div class="lg:w-1/2 flex flex-col gap-8">
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border-l-8 border-gold-accent flex-1 flex flex-col justify-center">
                         <h3 class="text-xl font-bold text-primary-green mb-4 uppercase">Магазин (Ярославское ш.)</h3>
                         <p class="text-gray-700 leading-relaxed mb-4">
                             ТСК "Тракт-Терминал"<br>
@@ -30,12 +42,13 @@
                         <a href="tel:+79775007879" class="text-2xl font-black text-dark-green hover:text-gold-accent transition-colors">+7 (977) 500-78-79</a>
                     </div>
 
-                    <div class="bg-white p-8 rounded-3xl shadow-lg border-l-8 border-primary-green">
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border-l-8 border-primary-green flex-1 flex flex-col justify-center">
                         <h3 class="text-xl font-bold text-primary-green mb-4 uppercase">Склад (МКАД 41 км)</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <p class="text-gray-700 leading-relaxed mb-4">
                             Рынок "Славянский Мир"<br>
                             41-й км МКАД
                         </p>
+                        <a href="tel:+79775007879" class="text-2xl font-black text-dark-green hover:text-gold-accent transition-colors">+7 (977) 500-78-79</a>
                     </div>
 
                     <div class="flex gap-4">
@@ -48,11 +61,19 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-200 rounded-3xl overflow-hidden min-h-[400px] shadow-inner relative">
-                    <div class="absolute inset-0 flex items-center justify-center text-gray-500 font-bold p-10 text-center">
-                        <p><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afdbce688fd551af62416d447e82d68f0db2d4d2b11cae54d3ce8b9f93b64ee73&amp;source=constructor" width="600" height="500" frameborder="0"></iframe></p>
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-200 rounded-3xl overflow-hidden shadow-lg h-full min-h-[400px]">
+                        <iframe 
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Afdbce688fd551af62416d447e82d68f0db2d4d2b11cae54d3ce8b9f93b64ee73&amp;source=constructor" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0"
+                            class="w-full h-full block"
+                            style="min-height: 500px;"
+                        ></iframe>
                     </div>
-                    </div>
+                </div>
+
             </div>
         </div>
     </main>
