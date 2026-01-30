@@ -1,7 +1,12 @@
-<nav class="bg-primary-green shadow-lg">
+<nav class="bg-primary-green shadow-lg relative z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-            <ul class="flex items-center gap-1">
+            
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2 -ml-2 hover:bg-white/10 rounded-lg transition-colors focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <ul class="hidden md:flex items-center gap-1">
                 <li><a href="catalog-page.html" class="nav-link uppercase text-xs font-black px-5 py-2.5">КАТАЛОГ</a></li>
                 <li><a href="prices.html" class="nav-link uppercase text-xs font-black px-5 py-2.5">ЦЕНЫ</a></li>
                 <li><a href="delivery.html" class="nav-link uppercase text-xs font-black px-5 py-2.5">ДОСТАВКА</a></li>
@@ -10,23 +15,41 @@
                 <li><a href="contacts.html" class="nav-link uppercase text-xs font-black px-5 py-2.5">КОНТАКТЫ</a></li>
             </ul>
 
-            <div class="flex items-center gap-8 text-white">
+            <div class="flex items-center gap-5 md:gap-8 text-white ml-auto md:ml-0">
                 <button title="Поиск" class="focus:outline-none bg-transparent border-0 p-0">
                     <i class="fas fa-search text-lg cursor-pointer hover:text-gold-accent transition-colors"></i>
                 </button>
 
-                <a href="cart.html" class="flex items-center gap-3 group cursor-pointer no-underline text-white">
+                <a href="cart.html" id="cart-button" class="flex items-center gap-3 group cursor-pointer no-underline text-white">
                     <div class="relative">
                         <i class="fas fa-shopping-cart text-lg group-hover:text-gold-accent transition-colors"></i>
-                        <span class="absolute -top-2 -right-2 bg-gold-accent text-dark-green text-[10px] font-bold px-1.5 rounded-full shadow-sm">
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-gold-accent text-dark-green text-[10px] font-bold px-1.5 rounded-full shadow-sm">
                             0
                         </span>
                     </div>
-                    <span class="text-sm font-bold group-hover:text-gold-accent transition-colors">
+                    <span id="cart-total" class="text-sm font-bold group-hover:text-gold-accent transition-colors whitespace-nowrap">
                         0 руб.
                     </span>
                 </a>
             </div>
+        </div>
+    </div>
+
+    <div id="mobile-menu-dropdown" class="hidden absolute top-full left-0 w-full bg-dark-green border-t border-white/10 shadow-2xl origin-top animate-fade-in-down">
+        <ul class="flex flex-col">
+            <li><a href="catalog-page.html" class="block py-4 px-6 text-white font-bold border-b border-white/5 hover:bg-white/5 uppercase tracking-wider">Каталог</a></li>
+            <li><a href="prices.html" class="block py-4 px-6 text-white font-bold border-b border-white/5 hover:bg-white/5 uppercase tracking-wider">Цены</a></li>
+            <li><a href="delivery.html" class="block py-4 px-6 text-white font-bold border-b border-white/5 hover:bg-white/5 uppercase tracking-wider">Доставка</a></li>
+            <li><a href="gallery.html" class="block py-4 px-6 text-white font-bold border-b border-white/5 hover:bg-white/5 uppercase tracking-wider">Галерея</a></li>
+            <li><a href="about.html" class="block py-4 px-6 text-white font-bold border-b border-white/5 hover:bg-white/5 uppercase tracking-wider">О Компании</a></li>
+            <li><a href="contacts.html" class="block py-4 px-6 text-white font-bold hover:bg-white/5 uppercase tracking-wider">Контакты</a></li>
+        </ul>
+        <div class="p-6 bg-black/20">
+            <a href="tel:+79775007879" class="block text-gold-accent font-black text-2xl mb-2">+7 (977) 500-78-79</a>
+            <p class="text-white/60 text-sm mb-4">Ежедневно 9:00 – 19:00</p>
+            <button class="trigger-callback w-full bg-gold-accent text-dark-green py-3 rounded-lg font-bold uppercase text-sm active:scale-95 transition-transform">
+                Заказать звонок
+            </button>
         </div>
     </div>
 </nav>

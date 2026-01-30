@@ -1,106 +1,139 @@
-/* --- БАЗОВЫЕ НАСТРОЙКИ --- */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Немного увеличили под липкое меню */
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-  background-color: #F8F9FA; /* Ваш основной фон bg-light-gray */
-  color: #1B3022;
-  line-height: 1.5;
-  margin: 0;
-  padding: 0;
-}
-
-/* --- НАВИГАЦИЯ --- */
-#nav-res {
-  z-index: 100;
-}
-
-.nav-link {
-  position: relative;
-  color: rgba(255, 255, 255, 0.9) !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-block;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-.nav-link:hover {
-  color: #FFB800 !important;
-  background-color: rgba(255, 255, 255, 0.1); 
-  transform: translateY(-1px);
-}
-
-.nav-link.active {
-  background-color: #1B3022 !important;
-  color: #FFB800 !important;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
-  border: 1px solid rgba(255, 184, 0, 0.2);
-}
-
-/* --- ХЛЕБНЫЕ КРОШКИ (Breadcrumbs) --- */
-/* Удалили принудительный белый фон и границы, чтобы блок был прозрачным */
-#breadcrumbs-res.hidden {
-  display: none;
-}
-
-#breadcrumbs-res {
-  /* Теперь управляется только через Tailwind классы в HTML */
-  display: block; 
-}
-
-/* --- КАРТОЧКИ КАТАЛОГА --- */
-.product-card {
-  background: white;
-  border: 1px solid rgba(0,0,0,0.05);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.product-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 60px -12px rgba(27, 48, 34, 0.15);
-  border-color: rgba(45, 93, 66, 0.1);
-}
-
-/* --- МОДАЛЬНОЕ ОКНО --- */
-#callback-modal {
-  transition: opacity 0.3s ease;
-}
-
-#modal-content {
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
-}
-
-/* Класс для отключения скролла при открытой модалке (используется в JS) */
-body.overflow-hidden {
-  overflow: hidden;
-}
-
-/* --- СКРОЛЛБАР --- */
-::-webkit-scrollbar { 
-  width: 10px; 
-}
-::-webkit-scrollbar-track { 
-  background: #F1F1F1; 
-}
-::-webkit-scrollbar-thumb {
-  background: #2D5D42;
-  border-radius: 5px;
-  border: 2px solid #F1F1F1;
-}
-
-/* --- АДАПТИВНОСТЬ --- */
-@media (max-width: 768px) {
-  .product-card:hover { 
-    transform: translateY(-5px); 
+/* =========================================
+   1. БАЗОВЫЕ НАСТРОЙКИ (GLOBAL)
+   ========================================= */
+   html {
+    scroll-behavior: smooth;
+    /* Отступ сверху для якорей, чтобы липкое меню не перекрывало контент */
+    scroll-padding-top: 80px; 
   }
   
-  .nav-link:hover {
-    transform: none;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #F8F9FA; /* light-gray */
+    color: #1B3022;            /* dark-green */
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    /* Убираем горизонтальный скролл, если анимации вылетают за край */
+    overflow-x: hidden; 
   }
-}
+  
+  /* Класс для блокировки скролла, когда открыта модалка */
+  body.overflow-hidden {
+    overflow: hidden;
+  }
+  
+  /* =========================================
+     2. КАСТОМНЫЙ СКРОЛЛБАР (Webkit)
+     ========================================= */
+  ::-webkit-scrollbar { 
+    width: 8px; /* Чуть уже для мобильных */
+  }
+  ::-webkit-scrollbar-track { 
+    background: #F1F1F1; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2D5D42;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1B3022;
+  }
+  
+  /* =========================================
+     3. НАВИГАЦИЯ (.nav-link)
+     ========================================= */
+  .nav-link {
+    position: relative;
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  
+  /* Активное состояние (текущая страница) */
+  .nav-link.active {
+    background-color: #1B3022 !important; /* dark-green */
+    color: #FFB800 !important;             /* gold-accent */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 184, 0, 0.2);
+  }
+  
+  /* =========================================
+     4. КАРТОЧКИ ТОВАРОВ (.product-card)
+     ========================================= */
+  .product-card {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.05);
+    /* Плавность для всех изменений */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  /* =========================================
+     5. ДЕСКТОПНЫЕ ЭФФЕКТЫ (Hover)
+     Включаются только на экранах шире 768px
+     ========================================= */
+  @media (min-width: 768px) {
+    /* Эффект наведения на ссылки меню */
+    .nav-link:hover {
+      color: #FFB800 !important;
+      background-color: rgba(255, 255, 255, 0.1); 
+      transform: translateY(-1px);
+    }
+  
+    /* Эффект наведения на карточку товара (подпрыгивание + тень) */
+    .product-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 60px -12px rgba(27, 48, 34, 0.15);
+      border-color: rgba(45, 93, 66, 0.1);
+    }
+    
+    /* Скроллбар чуть шире на ПК */
+    ::-webkit-scrollbar { 
+      width: 10px; 
+    }
+  }
+  
+  /* =========================================
+     6. ХЛЕБНЫЕ КРОШКИ
+     ========================================= */
+  #breadcrumbs-res.hidden {
+    display: none;
+  }
+  #breadcrumbs-res {
+    display: block; 
+  }
+  
+  /* =========================================
+     7. МОДАЛЬНОЕ ОКНО
+     ========================================= */
+  #callback-modal {
+    transition: opacity 0.3s ease;
+  }
+  
+  #modal-content {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  }
+  
+  /* =========================================
+     8. АНИМАЦИИ (Новое)
+     ========================================= */
+  /* Анимация выпадающего меню */
+  @keyframes fadeInDown {
+      from {
+          opacity: 0;
+          transform: translateY(-10px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+  
+  .animate-fade-in-down {
+      animation: fadeInDown 0.3s ease-out forwards;
+  }
