@@ -88,7 +88,7 @@ function setActiveLink() {
     navLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === 'catalog-page.html' && href === 'catalog.html')) {
+        if (href === currentPage || (currentPage === 'catalog-module.html' && href === 'catalog-module.html')) {
             link.classList.add('active');
         }
     });
@@ -105,7 +105,6 @@ function updateBreadcrumbs() {
     const pageTitles = {
         'index.html': 'Главная',
         'catalog.html': 'Каталог',
-        'catalog-page.html': 'Каталог',
         'prices.html': 'Цены',
         'gallery.html': 'Галерея',
         'delivery.html': 'Доставка',
@@ -177,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadComponent('callback-modal-res', 'components/callback-modal.html');
 
     if (document.getElementById('catalog-res')) {
-        loadComponent('catalog-res', 'components/catalog.html');
+        loadComponent('catalog-res', 'components/catalog-module.html');
     }
 
     if (!document.querySelector('script[src*="inputmask"]')) {
