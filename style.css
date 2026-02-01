@@ -39,21 +39,36 @@ body.overflow-hidden {
 }
 
 /* =========================================
-   3. НАВИГАЦИЯ (.nav-link)
+   3. НАВИГАЦИЯ (.nav-link и МВ)
    ========================================= */
-.nav-link {
+
+/* Общие стили для ссылок в ПК и МВ */
+.nav-link, 
+#mobile-menu-dropdown a {
     position: relative;
     color: rgba(255, 255, 255, 0.9) !important;
     transition: all 0.3s ease;
-    display: inline-block;
-    border-radius: 8px;
     text-decoration: none;
 }
 
-.nav-link.active {
-    background-color: #1B3022 !important;
-    color: #FFB800 !important;
+/* Специфично для ПК (кнопки) */
+.nav-link {
+    display: inline-block;
+    border-radius: 8px;
+}
+
+/* Состояние ACTIVE для обоих типов меню */
+.nav-link.active,
+#mobile-menu-dropdown a.active {
+    background-color: #1B3022 !important; /* Ваш темно-зеленый */
+    color: #FFB800 !important;          /* Ваш золотой */
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Дополнительный штрих для МВ: золотая линия слева */
+#mobile-menu-dropdown a.active {
+    border-left: 4px solid #FFB800;
+    padding-left: 1.25rem; /* Чуть увеличиваем отступ из-за линии */
 }
 
 /* =========================================

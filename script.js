@@ -79,16 +79,25 @@ async function loadComponent(id, url) {
  * 4. ПОДСВЕТКА АКТИВНОЙ ССЫЛКИ
  */
 function setActiveLink() {
+    // Получаем имя текущего файла
     let currentPage = window.location.pathname.split("/").pop() || 'index.html';
     currentPage = currentPage.split('?')[0]; 
-    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Выбираем ссылки из ПК-меню (nav-link) И из мобильного (внутри mobile-menu-dropdown)
+    const navLinks = document.querySelectorAll('.nav-link, #mobile-menu-dropdown a');
 
     navLinks.forEach(link => {
-        link.classList.remove('active');
+        link.classList.remove('active', 'text-gold-accent'); // Очищаем старые стили
+        
         const href = link.getAttribute('href');
-        // Очищаем href от возможных пробелов для точного сравнения
+        
         if (href && href.trim() === currentPage) {
             link.classList.add('active');
+            
+            // Если это ссылка в мобильном меню, подсветим её золотым
+            if (link.closest('#mobile-menu-dropdown')) {
+                link.classList.add('text-gold-accent');
+            }
         }
     });
 }
@@ -260,4 +269,59 @@ document.addEventListener('click', (e) => {
     if (modal && (e.target.closest('#close-modal') || e.target === modal)) {
         closeCallbackModal();
     }
+});
+
+    /**
+ * 10. ОБРАБОТКА ОТПРАВКИ ФОРМЫ В TELEGRAM
+ * Данный блок перехватывает событие отправки формы, собирает данные 
+ * и передает их в PHP-обработчик (send.php) без перезагрузки страницы.
+ */
+document.addEventListener('submit', async (e) => {
+    // Проверяем, что отправлена именно наша форма заказа
+    if (e.target && e.target.id === 'callbackForm') {
+        e.preventDefault(); // Блокируем стандартную перезагрузку страницы
+        
+        const form = e.target;
+        const btn = form.querySelector('button[type="submit"]');
+        const originalBtnText = btn.innerText;
+
+        // Подготавливаем данные формы для отправки
+        const formData = new FormData(form);
+
+        try {
+            // Визуальная индикация процесса отправки
+            btn.disabled = true;
+            btn.innerText = 'ОТПРАВКА...';
+
+            // Отправляем данные в PHP-файл методом POST
+            const response = await fetch('send.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.text();
+
+            // Если сервер вернул "success", значит бот отправил сообщение в ТГ
+            if (result.trim() === 'success') {
+                alert('Спасибо! Заявка принята. Мы свяжемся с вами в ближайшее время.');
+                form.reset(); // Очищаем поля формы
+                
+                // Закрываем модальное окно, если функция закрытия доступна
+                if (typeof closeCallbackModal === 'function') {
+                    closeCallbackModal();
+                }
+            } else {
+                throw new Error('Ошибка сервера');
+            }
+        } catch (error) {
+            // В случае сетевой ошибки или сбоя PHP
+            alert('Произошла ошибка при отправке. Пожалуйста, позвоните нам по телефону.');
+            console.error('Ошибка отправки в Telegram:', error);
+        } finally {
+            // Возвращаем кнопку в исходное состояние
+            btn.disabled = false;
+            btn.innerText = originalBtnText;
+        }
+    }
+
 });
