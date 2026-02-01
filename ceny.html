@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +11,20 @@
     <link rel="stylesheet" href="style.css">
     <script>
         tailwind.config = {
-            theme: { 
-                extend: { 
-                    colors: { 
-                        'primary-green': '#2D5D42', 
-                        'dark-green': '#1B3022', 
-                        'gold-accent': '#FFB800', 
-                        'light-gray': '#F8F9FA' 
-                    } 
-                } 
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#2D5D42',
+                        'dark-green': '#1B3022',
+                        'gold-accent': '#FFB800',
+                        'light-gray': '#F8F9FA'
+                    }
+                }
             }
         }
     </script>
 </head>
+
 <body class="bg-light-gray">
 
     <div id="header-top-res"></div>
@@ -31,16 +33,18 @@
 
     <main class="py-8 md:py-10 min-h-[60vh]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl md:text-4xl font-black text-dark-green mb-6 uppercase tracking-tight text-center md:text-left">
+            <h1
+                class="text-2xl md:text-3xl font-black text-dark-green mb-6 uppercase tracking-tight text-center md:text-left">
                 Прайс-лист на изделия из лиственницы
             </h1>
-            
+
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 mb-12">
-                <div class="hidden md:block overflow-x-auto"> 
+                <div class="hidden md:block overflow-x-auto">
                     <table class="w-full text-left border-collapse">
                         <thead class="bg-primary-green text-white">
                             <tr>
-                                <th class="p-3 uppercase text-[11px] tracking-widest font-bold">Наименование и размер</th>
+                                <th class="p-3 uppercase text-[11px] tracking-widest font-bold">Наименование и размер
+                                </th>
                                 <th class="p-3 uppercase text-[11px] tracking-widest font-bold text-center">Экстра</th>
                                 <th class="p-3 uppercase text-[11px] tracking-widest font-bold text-center">Прима</th>
                                 <th class="p-3 uppercase text-[11px] tracking-widest font-bold text-center">АВ</th>
@@ -49,49 +53,91 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100 text-[13px]">
-                            <tr class="bg-gray-50/80"><td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">Палубная доска</td></tr>
+
+                            <tr class="bg-gray-50/80">
+                                <td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">
+                                    Палубная доска</td>
+                            </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800">27х140мм 3м,4м</td>
                                 <td class="p-3 text-center font-black text-primary-green">4 000</td>
                                 <td class="p-3 text-center font-black text-primary-green">3 700</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 700</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 800</td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase">Заказать</button></td>
-                            </tr>                            
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
+                            </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800">35х140мм 3м,4м</td>
                                 <td class="p-3 text-center font-black text-primary-green">5 500</td>
                                 <td class="p-3 text-center font-black text-primary-green">5 000</td>
                                 <td class="p-3 text-center font-black text-primary-green">3 800</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 500</td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800">45х140мм 3м,4м</td>
-                                <td class="p-3 text-center text-gray-400 font-black">—</td>
-                                <td class="p-3 text-center text-gray-400 font-black">—</td>
-                                <td class="p-3 text-center text-gray-400 font-black">—</td>
+                                <td class="p-3 text-center text-gray-400 font-medium">—</td>
+                                <td class="p-3 text-center text-gray-400 font-medium">—</td>
+                                <td class="p-3 text-center text-gray-400 font-medium">—</td>
                                 <td class="p-3 text-center font-black text-primary-green">3 500</td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
+
+                            <tr class="bg-gray-50/80">
+                                <td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">
+                                    Террасная доска (Вельвет)</td>
                             </tr>
-                            <tr class="bg-gray-50/80"><td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">Террасная доска (Вельвет)</td></tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800">27х140мм 3м,4м</td>
                                 <td class="p-3 text-center font-black text-primary-green">4 000</td>
                                 <td class="p-3 text-center font-black text-primary-green">3 700</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 700</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 800</td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
-                            <tr class="bg-gray-50/80"><td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">Планкен прямой</td></tr>
+
+                            <tr class="bg-gray-50/80">
+                                <td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">
+                                    Доска пола (шпунтованная)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-gray-800">27х140мм 3м,4м</td>
+                                <td class="p-3 text-center font-black text-primary-green">4 100</td>
+                                <td class="p-3 text-center font-black text-primary-green">3 800</td>
+                                <td class="p-3 text-center font-black text-primary-green">2 800</td>
+                                <td class="p-3 text-center font-black text-primary-green">1 900</td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
+                            </tr>
+
+                            <tr class="bg-gray-50/80">
+                                <td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">
+                                    Планкен прямой</td>
+                            </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800">20х90мм 3м,4м</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 900</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 500</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 000</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 500</td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800">20х140мм 3м,4м</td>
@@ -99,43 +145,107 @@
                                 <td class="p-3 text-center font-black text-primary-green">2 600</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 100</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 500</td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
-                            <tr class="bg-gray-50/80"><td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">Планкен скошенный</td></tr>
+                            <tr>
+                                <td class="p-3 font-bold text-gray-800">20х190мм 3м,4м</td>
+                                <td class="p-3 text-center font-black text-primary-green">3 500</td>
+                                <td class="p-3 text-center font-black text-primary-green">3 000</td>
+                                <td class="p-3 text-center font-black text-primary-green">2 400</td>
+                                <td class="p-3 text-center font-black text-primary-green">1 800</td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
+                            </tr>
+
+                            <tr class="bg-gray-50/80">
+                                <td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">
+                                    Планкен скошенный</td>
+                            </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800">20х140мм 3м,4м</td>
                                 <td class="p-3 text-center font-black text-primary-green">3 100</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 700</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 100</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 500</td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
-                            <tr class="bg-gray-50/80"><td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">Имитация бруса</td></tr>
+
+                            <tr class="bg-gray-50/80">
+                                <td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">
+                                    Имитация бруса</td>
+                            </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800">20х140мм 3м,4м</td>
                                 <td class="p-3 text-center font-black text-primary-green">3 200</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 800</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 200</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 600</td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
-                            <tr class="bg-gray-50/80"><td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">Вагонка штиль (Лиственница)</td></tr>
+                            <tr>
+                                <td class="p-3 font-bold text-gray-800">20х190мм 3м,4м</td>
+                                <td class="p-3 text-center font-black text-primary-green">3 500</td>
+                                <td class="p-3 text-center font-black text-primary-green">3 100</td>
+                                <td class="p-3 text-center font-black text-primary-green">2 400</td>
+                                <td class="p-3 text-center font-black text-primary-green">2 000</td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
+                            </tr>
+
+                            <tr class="bg-gray-50/80">
+                                <td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">
+                                    Вагонка штиль (Лиственница)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-gray-800">14х96мм 3м,4м</td>
+                                <td class="p-3 text-center font-black text-primary-green">2 600</td>
+                                <td class="p-3 text-center font-black text-primary-green">2 400</td>
+                                <td class="p-3 text-center font-black text-primary-green">2 000</td>
+                                <td class="p-3 text-center font-black text-primary-green">1 400</td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
+                            </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800">14х120/140мм 3м,4м</td>
                                 <td class="p-3 text-center font-black text-primary-green">3 000</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 800</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 100</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 500</td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
-                            <tr class="bg-blue-50/50"><td colspan="6" class="p-3 font-black text-blue-900 uppercase text-xs tracking-wider">Вагонка штиль (Ангарская сосна)</td></tr>
+
+                            <tr class="bg-gray-50/80">
+                                <td colspan="6" class="p-3 font-black text-dark-green uppercase text-xs tracking-wider">
+                                    Вагонка штиль (Ангарская сосна)</td>
+                            </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800">15х90мм 3м,4м</td>
                                 <td class="p-3 text-center font-black text-primary-green">2 100</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 800</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 700</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 300</td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800">15х140мм 3м,4м</td>
@@ -143,7 +253,10 @@
                                 <td class="p-3 text-center font-black text-primary-green">2 500</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 800</td>
                                 <td class="p-3 text-center font-black text-primary-green">1 300</td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -152,108 +265,442 @@
                 <div class="md:hidden divide-y divide-gray-100">
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="font-black text-dark-green uppercase text-sm mb-1">Палубная доска</h3><div class="text-[12px] text-gray-500 font-bold italic">27х140мм 3м,4м</div></div>
-                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Палубная доска</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">27х140мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
                         </div>
                         <div class="grid grid-cols-4 gap-2 text-center">
-                            <div><div class="text-[9px] uppercase font-black text-gray-400">Экстра</div><div class="text-sm font-black text-primary-green">4000</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">Прима</div><div class="text-sm font-black text-primary-green">3700</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">АВ</div><div class="text-sm font-black text-primary-green">2700</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">ВС</div><div class="text-sm font-black text-primary-green">1800</div></div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">4000</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">3700</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">2700</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1800</div>
+                            </div>
                         </div>
                     </div>
+                
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Палубная доска</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">35х140мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 text-center">
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">5500</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">5000</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">3800</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">2500</div>
+                            </div>
+                        </div>
+                    </div>
+                
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-4">
                             <div>
                                 <h3 class="font-black text-dark-green uppercase text-sm mb-1">Палубная доска</h3>
                                 <div class="text-[12px] text-gray-500 font-bold">45х140мм 3м,4м</div>
                             </div>
-                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
                         </div>
                         <div class="grid grid-cols-4 gap-2 text-center">
-                            <div><div class="text-[9px] uppercase font-black text-gray-400">Экстра</div><div class="text-sm font-medium text-gray-400">—</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">Прима</div><div class="text-sm font-medium text-gray-400">—</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">АВ</div><div class="text-sm font-medium text-gray-400">—</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">ВС</div><div class="text-sm font-black text-primary-green">3500</div></div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-medium text-gray-400">—</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-medium text-gray-400">—</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-medium text-gray-400">—</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">3500</div>
+                            </div>
                         </div>
                     </div>
+                
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="font-black text-dark-green uppercase text-sm mb-1">Террасная доска</h3><div class="text-[12px] text-gray-500 font-bold italic">27х140мм 3м,4м</div></div>
-                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Террасная доска (Вельвет)</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">27х140мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
                         </div>
                         <div class="grid grid-cols-4 gap-2 text-center">
-                            <div><div class="text-[9px] uppercase font-black text-gray-400">Экстра</div><div class="text-sm font-black text-primary-green">4000</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">Прима</div><div class="text-sm font-black text-primary-green">3700</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">АВ</div><div class="text-sm font-black text-primary-green">2700</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">ВС</div><div class="text-sm font-black text-primary-green">1800</div></div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">4000</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">3700</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">2700</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1800</div>
+                            </div>
                         </div>
                     </div>
+                
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="font-black text-dark-green uppercase text-sm mb-1">Планкен (Скош/Прям)</h3><div class="text-[12px] text-gray-500 font-bold italic">20х140мм 3м,4м</div></div>
-                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Доска пола (шпунтованная)</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">27х140мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
                         </div>
                         <div class="grid grid-cols-4 gap-2 text-center">
-                            <div><div class="text-[9px] uppercase font-black text-gray-400">Экстра</div><div class="text-sm font-black text-primary-green">3100</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">Прима</div><div class="text-sm font-black text-primary-green">2700</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">АВ</div><div class="text-sm font-black text-primary-green">2100</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">ВС</div><div class="text-sm font-black text-primary-green">1500</div></div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">4100</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">3800</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">2800</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1900</div>
+                            </div>
                         </div>
                     </div>
+                
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="font-black text-dark-green uppercase text-sm mb-1">Имитация бруса</h3><div class="text-[12px] text-gray-500 font-bold italic">20х140мм 3м,4м</div></div>
-                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Планкен прямой</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">20х90мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
                         </div>
                         <div class="grid grid-cols-4 gap-2 text-center">
-                            <div><div class="text-[9px] uppercase font-black text-gray-400">Экстра</div><div class="text-sm font-black text-primary-green">3200</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">Прима</div><div class="text-sm font-black text-primary-green">2800</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">АВ</div><div class="text-sm font-black text-primary-green">2200</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">ВС</div><div class="text-sm font-black text-primary-green">1600</div></div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">2900</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">2500</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">2000</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1500</div>
+                            </div>
                         </div>
                     </div>
+                
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="font-black text-dark-green uppercase text-sm mb-1">Вагонка штиль (Листв)</h3><div class="text-[12px] text-gray-500 font-bold italic">14х120/140мм 3м,4м</div></div>
-                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Планкен прямой</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">20х140мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
                         </div>
                         <div class="grid grid-cols-4 gap-2 text-center">
-                            <div><div class="text-[9px] uppercase font-black text-gray-400">Экстра</div><div class="text-sm font-black text-primary-green">3000</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">Прима</div><div class="text-sm font-black text-primary-green">2800</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">АВ</div><div class="text-sm font-black text-primary-green">2100</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">ВС</div><div class="text-sm font-black text-primary-green">1500</div></div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">3100</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">2600</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">2100</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1500</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-blue-50/30 p-5 border-y border-blue-100">
+                
+                    <div class="p-5">
                         <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="font-black text-blue-900 uppercase text-sm mb-1">Вагонка (Ангарская сосна)</h3><div class="text-[12px] text-gray-500 font-bold italic">15х140мм 3м,4м</div></div>
-                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Планкен прямой</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">20х190мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
                         </div>
                         <div class="grid grid-cols-4 gap-2 text-center">
-                            <div><div class="text-[9px] uppercase font-black text-gray-400">Экстра</div><div class="text-sm font-black text-primary-green">2800</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">Прима</div><div class="text-sm font-black text-primary-green">2500</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">АВ</div><div class="text-sm font-black text-primary-green">1800</div></div>
-                            <div class="border-l border-gray-100"><div class="text-[9px] uppercase font-black text-gray-400">ВС</div><div class="text-sm font-black text-primary-green">1300</div></div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">3500</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">3000</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">2400</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1800</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Планкен скошенный</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">20х140мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 text-center">
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">3100</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">2700</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">2100</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1500</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Имитация бруса</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">20х140мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 text-center">
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">3200</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">2800</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">2200</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1600</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Имитация бруса</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">20х190мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 text-center">
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">3500</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">3100</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">2400</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">2000</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Вагонка штиль (Листв)</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">14х96мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 text-center">
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">2600</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">2400</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">2000</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1400</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Вагонка штиль (Листв)</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">14х120/140мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 text-center">
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">3000</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">2800</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">2100</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1500</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Вагонка (Ангарская сосна)</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">15х90мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 text-center">
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">2100</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">1800</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">1700</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1300</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-black text-dark-green uppercase text-sm mb-1">Вагонка (Ангарская сосна)</h3>
+                                <div class="text-[12px] text-gray-500 font-bold">15х140мм 3м,4м</div>
+                            </div>
+                            <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 text-center">
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                <div class="text-sm font-black text-primary-green">2800</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
+                                <div class="text-sm font-black text-primary-green">2500</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">АВ</div>
+                                <div class="text-sm font-black text-primary-green">1800</div>
+                            </div>
+                            <div class="bg-gray-50 py-2 rounded-xl">
+                                <div class="text-[9px] uppercase font-black text-gray-400">ВС</div>
+                                <div class="text-sm font-black text-primary-green">1300</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <h2 class="text-2xl md:text-3xl font-black text-dark-green mb-6 uppercase tracking-tight text-center md:text-left">
+            <h2
+                class="text-2xl md:text-3xl font-black text-dark-green mb-6 uppercase tracking-tight text-center md:text-left">
                 Прайс-лист на погонажные изделия из лиственницы
             </h2>
-            
+
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 mb-12">
                 <div class="hidden md:block overflow-x-auto">
                     <table class="w-full text-left border-collapse text-[13px]">
                         <thead class="bg-primary-green text-white">
                             <tr>
-                                <th class="p-3 uppercase text-[11px] font-bold">Наименование</th>
-                                <th class="p-3 uppercase text-[11px] font-bold text-center">Длина</th>
-                                <th class="p-3 uppercase text-[11px] font-bold text-center">Сорт</th>
-                                <th class="p-3 uppercase text-[11px] font-bold text-center">Размеры / Цена за м.п.</th>
-                                <th class="p-3 uppercase text-[11px] font-bold text-center">Заказ</th>
+                                <th class="p-3 uppercase text-[11px] tracking-widest font-bold">Наименование</th>
+                                <th class="p-3 uppercase text-[11px] tracking-widest font-bold text-center">Длина</th>
+                                <th class="p-3 uppercase text-[11px] tracking-widest font-bold text-center">Сорт</th>
+                                <th class="p-3 uppercase text-[11px] tracking-widest font-bold text-center">Размеры /
+                                    Цена за м.п.</th>
+                                <th class="p-3 uppercase text-[11px] tracking-widest font-bold text-center">Заказ</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
@@ -263,12 +710,24 @@
                                 <td class="p-3 text-center font-bold">B</td>
                                 <td class="p-3">
                                     <div class="flex justify-around text-center">
-                                        <div><div class="text-[10px] text-gray-400">20х45мм</div><div class="font-black text-primary-green">150</div></div>
-                                        <div><div class="text-[10px] text-gray-400">30х40мм</div><div class="font-black text-primary-green">220</div></div>
-                                        <div><div class="text-[10px] text-gray-400">45х70мм</div><div class="font-black text-primary-green">300</div></div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">20х45мм</div>
+                                            <div class="font-black text-primary-green">150</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">30х40мм</div>
+                                            <div class="font-black text-primary-green">220</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">45х70мм</div>
+                                            <div class="font-black text-primary-green">300</div>
+                                        </div>
                                     </div>
                                 </td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg text-[10px] uppercase font-bold">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800 uppercase">ПЛИНТУС</td>
@@ -276,19 +735,37 @@
                                 <td class="p-3 text-center font-bold">Экстра</td>
                                 <td class="p-3">
                                     <div class="flex justify-around text-center">
-                                        <div><div class="text-[10px] text-gray-400">25мм</div><div class="font-black text-primary-green">160</div></div>
-                                        <div><div class="text-[10px] text-gray-400">35мм</div><div class="font-black text-primary-green">180</div></div>
-                                        <div><div class="text-[10px] text-gray-400">45мм</div><div class="font-black text-primary-green">200</div></div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">25мм</div>
+                                            <div class="font-black text-primary-green">160</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">35мм</div>
+                                            <div class="font-black text-primary-green">180</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">45мм</div>
+                                            <div class="font-black text-primary-green">200</div>
+                                        </div>
                                     </div>
                                 </td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg text-[10px] uppercase font-bold">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800 uppercase">ЕВРОПЛИНТУС</td>
                                 <td class="p-3 text-center font-bold">3м</td>
                                 <td class="p-3 text-center font-bold">Экстра</td>
-                                <td class="p-3 text-center"><div class="text-[10px] text-gray-400">55мм</div><div class="font-black text-primary-green">250</div></td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg text-[10px] uppercase font-bold">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <div class="text-[11px] text-gray-400 font-medium">55мм</div>
+                                    <div class="font-black text-primary-green">250</div>
+                                </td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800 uppercase">РАСКЛАДКА</td>
@@ -296,12 +773,24 @@
                                 <td class="p-3 text-center font-bold">Экстра</td>
                                 <td class="p-3">
                                     <div class="flex justify-around text-center">
-                                        <div><div class="text-[10px] text-gray-400">25мм</div><div class="font-black text-primary-green">130</div></div>
-                                        <div><div class="text-[10px] text-gray-400">35мм</div><div class="font-black text-primary-green">150</div></div>
-                                        <div><div class="text-[10px] text-gray-400">45мм</div><div class="font-black text-primary-green">170</div></div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">25мм</div>
+                                            <div class="font-black text-primary-green">130</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">35мм</div>
+                                            <div class="font-black text-primary-green">150</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">45мм</div>
+                                            <div class="font-black text-primary-green">170</div>
+                                        </div>
                                     </div>
                                 </td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg text-[10px] uppercase font-bold">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 font-bold text-gray-800 uppercase">УГОЛОК НАРУЖНЫЙ</td>
@@ -309,12 +798,24 @@
                                 <td class="p-3 text-center font-bold">Экстра</td>
                                 <td class="p-3">
                                     <div class="flex justify-around text-center">
-                                        <div><div class="text-[10px] text-gray-400">25мм</div><div class="font-black text-primary-green">210</div></div>
-                                        <div><div class="text-[10px] text-gray-400">35мм</div><div class="font-black text-primary-green">230</div></div>
-                                        <div><div class="text-[10px] text-gray-400">45мм</div><div class="font-black text-primary-green">250</div></div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">25мм</div>
+                                            <div class="font-black text-primary-green">210</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">35мм</div>
+                                            <div class="font-black text-primary-green">230</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-[11px] text-gray-400 font-medium">45мм</div>
+                                            <div class="font-black text-primary-green">250</div>
+                                        </div>
                                     </div>
                                 </td>
-                                <td class="p-3 text-center"><button class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg text-[10px] uppercase font-bold">Заказать</button></td>
+                                <td class="p-3 text-center">
+                                    <button
+                                        class="trigger-callback bg-primary-green text-white px-4 py-1.5 rounded-lg font-bold text-[10px] uppercase transition-all hover:scale-110 active:scale-95">Заказать</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -323,64 +824,67 @@
                 <div class="md:hidden divide-y divide-gray-100">
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-3">
-                            <div><h3 class="font-black text-dark-green uppercase text-sm">БРУС</h3><div class="text-[11px] text-gray-500 font-bold italic leading-tight">Длина: 3м, 4м<br>Сорт: B</div></div>
+                            <div><h3 class="font-black text-dark-green uppercase text-sm">БРУС</h3><div class="text-[11px] text-gray-500 font-bold leading-tight">Длина: 3м, 4м<br>Сорт: B</div></div>
                             <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
                         </div>
                         <div class="flex justify-between gap-2 text-center">
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">20х45</div><div class="font-black text-primary-green">150</div></div>
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">30х40</div><div class="font-black text-primary-green">220</div></div>
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">45х70</div><div class="font-black text-primary-green">300</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">20х45</div><div class="font-black text-primary-green">150</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">30х40</div><div class="font-black text-primary-green">220</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">45х70</div><div class="font-black text-primary-green">300</div></div>
                         </div>
                     </div>
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-3">
-                            <div><h3 class="font-black text-dark-green uppercase text-sm">ПЛИНТУС</h3><div class="text-[11px] text-gray-500 font-bold italic leading-tight">Длина: 3м<br>Сорт: Экстра</div></div>
+                            <div><h3 class="font-black text-dark-green uppercase text-sm">ПЛИНТУС</h3><div class="text-[11px] text-gray-500 font-bold leading-tight">Длина: 3м<br>Сорт: Экстра</div></div>
                             <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
                         </div>
                         <div class="flex justify-between gap-2 text-center">
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">25мм</div><div class="font-black text-primary-green">160</div></div>
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">35мм</div><div class="font-black text-primary-green">180</div></div>
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">45мм</div><div class="font-black text-primary-green">200</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">25мм</div><div class="font-black text-primary-green">160</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">35мм</div><div class="font-black text-primary-green">180</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">45мм</div><div class="font-black text-primary-green">200</div></div>
                         </div>
                     </div>
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-3">
-                            <div><h3 class="font-black text-dark-green uppercase text-sm">ЕВРОПЛИНТУС</h3><div class="text-[11px] text-gray-500 font-bold italic leading-tight">Длина: 3м<br>Сорт: Экстра</div></div>
+                            <div><h3 class="font-black text-dark-green uppercase text-sm">ЕВРОПЛИНТУС</h3><div class="text-[11px] text-gray-500 font-bold leading-tight">Длина: 3м<br>Сорт: Экстра</div></div>
                             <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
                         </div>
-                        <div class="bg-gray-50 p-2 rounded text-center"><div class="text-[9px] text-gray-400">55мм</div><div class="font-black text-primary-green">250</div></div>
+                        <div class="bg-gray-50 p-2 rounded text-center"><div class="text-[11px] text-gray-400">55мм</div><div class="font-black text-primary-green">250</div></div>
                     </div>
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-3">
-                            <div><h3 class="font-black text-dark-green uppercase text-sm">РАСКЛАДКА</h3><div class="text-[11px] text-gray-500 font-bold italic leading-tight">Длина: 3м<br>Сорт: Экстра</div></div>
+                            <div><h3 class="font-black text-dark-green uppercase text-sm">РАСКЛАДКА</h3><div class="text-[11px] text-gray-500 font-bold leading-tight">Длина: 3м<br>Сорт: Экстра</div></div>
                             <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
                         </div>
                         <div class="flex justify-between gap-2 text-center">
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">25мм</div><div class="font-black text-primary-green">130</div></div>
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">35мм</div><div class="font-black text-primary-green">150</div></div>
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">45мм</div><div class="font-black text-primary-green">170</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">25мм</div><div class="font-black text-primary-green">130</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">35мм</div><div class="font-black text-primary-green">150</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">45мм</div><div class="font-black text-primary-green">170</div></div>
                         </div>
                     </div>
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-3">
-                            <div><h3 class="font-black text-dark-green uppercase text-sm">УГОЛОК НАРУЖНЫЙ</h3><div class="text-[11px] text-gray-500 font-bold italic leading-tight">Длина: 3м<br>Сорт: Экстра</div></div>
+                            <div><h3 class="font-black text-dark-green uppercase text-sm">УГОЛОК НАРУЖНЫЙ</h3><div class="text-[11px] text-gray-500 font-bold leading-tight">Длина: 3м<br>Сорт: Экстра</div></div>
                             <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px]">Заказать</button>
                         </div>
                         <div class="flex justify-between gap-2 text-center">
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">25мм</div><div class="font-black text-primary-green">210</div></div>
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">35мм</div><div class="font-black text-primary-green">230</div></div>
-                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[9px] text-gray-400">45мм</div><div class="font-black text-primary-green">250</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">25мм</div><div class="font-black text-primary-green">210</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">35мм</div><div class="font-black text-primary-green">230</div></div>
+                            <div class="flex-1 bg-gray-50 p-2 rounded"><div class="text-[11px] text-gray-400">45мм</div><div class="font-black text-primary-green">250</div></div>
                         </div>
                     </div>
                 </div>
             </div>
+            
 
-            <div class="mt-8 flex flex-col md:flex-row items-center justify-between bg-primary-green/5 p-8 rounded-3xl border border-primary-green/10 gap-6">
+            <div
+                class="mt-8 flex flex-col md:flex-row items-center justify-between bg-primary-green/5 p-8 rounded-3xl border border-primary-green/10 gap-6">
                 <div class="text-center md:text-left">
                     <h3 class="text-xl font-bold text-dark-green mb-2">Нужен индивидуальный расчет?</h3>
                     <p class="text-gray-600">Оставьте заявку, и мы подготовим смету с учетом скидки на объем.</p>
                 </div>
-                <button class="trigger-callback w-full md:w-auto bg-gold-accent text-dark-green px-10 py-5 rounded-xl font-black uppercase text-sm shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center justify-center text-center">
+                <button
+                    class="trigger-callback w-full md:w-auto bg-gold-accent text-dark-green px-10 py-5 rounded-xl font-black uppercase text-sm shadow-lg transition-all hover:scale-105 active:scale-95 flex items-center justify-center text-center">
                     Заказать расчет
                 </button>
             </div>
@@ -391,4 +895,5 @@
     <div id="callback-modal-res"></div>
     <script src="script.js"></script>
 </body>
+
 </html>
