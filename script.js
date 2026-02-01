@@ -104,16 +104,20 @@ function updateBreadcrumbs() {
 
     const pageTitles = {
         'index.html': 'Главная',
-        'katalog.html ': 'Каталог',
-        'ceny.html ': 'Цены',
-        'nashi-raboty.html ': 'Галерея',
-        'dostavka-i-oplata.html ': 'Доставка',
-        'o-kompanii.html ': 'О компании',
-        'kontakty.html ': 'Контакты'
+        'katalog.html': 'Каталог',
+        'ceny.html': 'Цены',
+        'nashi-raboty.html': 'Галерея',
+        'dostavka-i-oplata.html': 'Доставка',
+        'o-kompanii.html': 'О компании',
+        'kontakty.html': 'Контакты',
+        // Добавляем новые страницы
+        'politika-konfidencialnosti.html': 'Политика конфиденциальности',
+        'politika-obrabotki-cookie.html': 'Политика обработки cookie',
+        'soglasie-na-reklamu.html': 'Согласие на получение рекламы'
     };
 
     let currentPage = window.location.pathname.split("/").pop() || 'index.html';
-    currentPage = currentPage.split('?')[0];
+    currentPage = currentPage.split('?')[0].trim(); // trim() уберет случайные пробелы
 
     if (currentPage === 'index.html') {
         breadcrumbContainer.classList.add('hidden');
