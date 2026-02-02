@@ -165,19 +165,9 @@ body.overflow-hidden {
 
    .swiper-slide {
     display: flex !important;
+    height: 100% !important;
     position: relative;
     overflow: hidden;
-    /* На десктопе оставляем фиксированную высоту */
-    height: 550px !important; 
-}
-
-/* МОБИЛЬНАЯ ВЕРСИЯ: заставляем слайд растянуться */
-@media (max-width: 768px) {
-    .swiper-slide {
-        /* 100svh — это вся высота экрана телефона без учета панелей браузера */
-        height: 100svh !important; 
-        min-height: 500px !important;
-    }
 }
 
 .swiper-slide picture,
@@ -186,8 +176,7 @@ body.overflow-hidden {
     top: 0;
     left: 0;
     width: 100%;
-    /* Важно: 100% здесь заставит картинку заполнить всю высоту .swiper-slide */
-    height: 100% !important; 
+    height: 100%;
     object-fit: cover;
     z-index: 1;
 }
@@ -195,8 +184,6 @@ body.overflow-hidden {
 .swiper-slide > div {
     position: relative;
     z-index: 10;
-    /* Растягиваем контейнер с текстом на всю ширину */
-    width: 100%;
 }
 
 /* ПАГИНАЦИЯ */
@@ -212,24 +199,31 @@ body.overflow-hidden {
     opacity: 1 !important;
 }
 
-/* СТРЕЛКИ */
+/* СТРЕЛКИ: как были раньше */
 .swiper-button-next, 
 .swiper-button-prev {
     color: #FFFFFF !important;
-    opacity: 0.5 !important;
+    opacity: 0.5 !important; /* Тусклые по умолчанию */
     transition: all 0.3s ease-in-out !important;
     z-index: 20;
 }
 
-.swiper-button-next { right: 40px !important; }
-.swiper-button-prev { left: 40px !important; }
+/* Отводим от краев (только для десктопа) */
+.swiper-button-next {
+    right: 40px !important; /* Отступ справа */
+}
+
+.swiper-button-prev {
+    left: 40px !important;  /* Отступ слева */
+}
 
 .swiper-button-next:hover, 
 .swiper-button-prev:hover {
-    opacity: 1 !important;
-    transform: scale(1.2);
+    opacity: 1 !important; /* Яркие при наведении */
+    transform: scale(1.2); /* Увеличиваются при наведении */
 }
 
+/* На мобилках стрелок НЕ БЫЛО — скрываем */
 @media (max-width: 768px) {
     .swiper-button-next, 
     .swiper-button-prev {
