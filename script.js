@@ -15,6 +15,76 @@ function animateCart() {
 }
 
 /**
+ * ПЕРЕКЛЮЧЕНИЕ РЕЖИМОВ ФОРМЫ (Глобальная функция)
+ */
+window.switchFormMode = function(mode) {
+    const btnChat = document.getElementById('btn-chat');
+    const btnCall = document.getElementById('btn-call');
+    const phoneWrap = document.getElementById('phone-field-wrapper');
+    const extraFields = document.getElementById('extra-fields');
+    const subject = document.getElementById('form-subject');
+    const phoneInput = document.getElementById('user-phone');
+    const emailInput = document.getElementById('user-email');
+    const titleElement = document.querySelector('#callback-modal h3');
+
+    // Проверяем, не заказывает ли пользователь конкретный товар
+    // Если в заголовке есть "Заказать:", мы его не трогаем (Пункт 1)
+    const isProductOrder = titleElement?.innerText.includes('Заказать:');
+
+    if (mode === 'chat') {
+        phoneWrap?.classList.add('hidden');
+        extraFields?.classList.remove('hidden');
+        if (subject) subject.value = "Заявка на чат (Email)";
+        if (phoneInput) phoneInput.required = false;
+        if (emailInput) emailInput.required = true;
+
+        // Меняем заголовок на "Написать нам", если это не заказ товара (Пункт 2)
+        if (!isProductOrder && titleElement) {
+            titleElement.innerText = 'Написать нам';
+        }
+
+        // Дизайн активной кнопки Чат
+        btnChat.className = "flex-1 py-2.5 px-2 bg-white shadow-sm rounded-xl border border-gray-200 transition-all flex items-center justify-center gap-2 border-0 outline-none cursor-pointer group";
+        btnCall.className = "flex-1 py-2.5 px-2 bg-gray-50 hover:bg-gray-100 rounded-xl border border-gray-100 transition-all flex items-center justify-center gap-2 border-0 outline-none cursor-pointer group";
+        
+        updateBtnContent(btnChat, true);
+        updateBtnContent(btnCall, false);
+    } else {
+        phoneWrap?.classList.remove('hidden');
+        extraFields?.classList.add('hidden');
+        if (subject) subject.value = "Обратный звонок";
+        if (phoneInput) phoneInput.required = true;
+        if (emailInput) emailInput.required = false;
+
+        // Меняем заголовок на "Заказать звонок", если это не заказ товара (Пункт 3)
+        if (!isProductOrder && titleElement) {
+            titleElement.innerText = 'Заказать звонок';
+        }
+
+        // Дизайн активной кнопки Звонок
+        btnCall.className = "flex-1 py-2.5 px-2 bg-white shadow-sm rounded-xl border border-gray-200 transition-all flex items-center justify-center gap-2 border-0 outline-none cursor-pointer group";
+        btnChat.className = "flex-1 py-2.5 px-2 bg-gray-50 hover:bg-gray-100 rounded-xl border border-gray-100 transition-all flex items-center justify-center gap-2 border-0 outline-none cursor-pointer group";
+        
+        updateBtnContent(btnCall, true);
+        updateBtnContent(btnChat, false);
+    }
+}
+
+// Вспомогательная функция для иконок (чтобы код был чище)
+function updateBtnContent(btn, active) {
+    if (!btn) return;
+    const icon = btn.querySelector('i');
+    const span = btn.querySelector('span');
+    if (active) {
+        icon.className = icon.className.replace('text-gray-400', 'text-primary-green');
+        span.className = span.className.replace('text-gray-500', 'text-primary-green');
+    } else {
+        icon.className = icon.className.replace('text-primary-green', 'text-gray-400');
+        span.className = span.className.replace('text-primary-green', 'text-gray-500');
+    }
+}
+
+/**
  * 2. МОБИЛЬНОЕ МЕНЮ
  */
 function initMobileMenu() {
@@ -79,22 +149,15 @@ async function loadComponent(id, url) {
  * 4. ПОДСВЕТКА АКТИВНОЙ ССЫЛКИ
  */
 function setActiveLink() {
-    // Получаем имя текущего файла
     let currentPage = window.location.pathname.split("/").pop() || 'index.html';
     currentPage = currentPage.split('?')[0]; 
-
-    // Выбираем ссылки из ПК-меню (nav-link) И из мобильного (внутри mobile-menu-dropdown)
     const navLinks = document.querySelectorAll('.nav-link, #mobile-menu-dropdown a');
 
     navLinks.forEach(link => {
-        link.classList.remove('active', 'text-gold-accent'); // Очищаем старые стили
-        
+        link.classList.remove('active', 'text-gold-accent');
         const href = link.getAttribute('href');
-        
         if (href && href.trim() === currentPage) {
             link.classList.add('active');
-            
-            // Если это ссылка в мобильном меню, подсветим её золотым
             if (link.closest('#mobile-menu-dropdown')) {
                 link.classList.add('text-gold-accent');
             }
@@ -135,49 +198,34 @@ function updateBreadcrumbs() {
  * 6. ЛОГИКА МОДАЛЬНОГО ОКНА
  */
 function openCallbackModal(productName = null, isEmailMode = false) {
-    // Сбрасываем кнопки: Чат активен (серый), Звонок неактивен (белый)
-    if (typeof switchMode === 'function') {
-        switchMode('chat');
-    }
-
     const modal = document.getElementById('callback-modal');
     const content = document.getElementById('modal-content');
     const titleElement = modal?.querySelector('h3');
     const subjectInput = document.getElementById('form-subject');
-    
-    const extraFields = document.getElementById('extra-fields');
-    const phoneField = document.getElementById('phone-field-wrapper');
-    const emailInput = document.getElementById('user-email');
-    const phoneInput = document.getElementById('user-phone');
 
     if (!modal || !content) return;
 
+    // Сбрасываем форму перед открытием
     document.getElementById('callbackForm')?.reset();
 
-    if (isEmailMode) {
-        extraFields?.classList.remove('hidden');
-        phoneField?.classList.add('hidden');
-        if (titleElement) titleElement.innerText = 'Написать нам';
-        if (subjectInput) subjectInput.value = 'Письмо с сайта (Email)';
-        if (emailInput) emailInput.required = true;
-        if (phoneInput) phoneInput.required = false;
-    } else {
-        extraFields?.classList.add('hidden');
-        phoneField?.classList.remove('hidden');
-        if (phoneInput) phoneInput.required = true;
-        if (emailInput) emailInput.required = false;
-
-        if (productName && productName.trim().length > 0) {
-            let cleanName = productName.trim();
-            cleanName = cleanName.charAt(0).toUpperCase() + cleanName.slice(1).toLowerCase();
-            if (titleElement) titleElement.innerText = 'Заказать: ' + cleanName;
-            if (subjectInput) subjectInput.value = 'Заказ товара: ' + cleanName;
-        } else {
-            if (titleElement) titleElement.innerText = 'Заказать звонок';
-            if (subjectInput) subjectInput.value = 'Обратный звонок';
+    // ПУНКТ 1: Если передан товар, ставим заголовок "Заказать: Товар"
+    if (productName && productName.trim().length > 0) {
+        let cleanName = productName.trim();
+        cleanName = cleanName.charAt(0).toUpperCase() + cleanName.slice(1).toLowerCase();
+        if (titleElement) titleElement.innerText = 'Заказать: ' + cleanName;
+        if (subjectInput) subjectInput.value = 'Заказ товара: ' + cleanName;
+    } 
+    // ПУНКТ 2 и 3: Если товара нет, ставим базовый заголовок в зависимости от кнопки
+    else {
+        if (titleElement) {
+            titleElement.innerText = isEmailMode ? 'Написать нам' : 'Заказать звонок';
         }
     }
 
+    // Включаем нужный режим (телефон или почта)
+    window.switchFormMode(isEmailMode ? 'chat' : 'call');
+
+    // Показываем модалку
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.style.overflow = 'hidden';
@@ -193,11 +241,6 @@ function closeCallbackModal() {
     const modal = document.getElementById('callback-modal');
     const content = document.getElementById('modal-content');
     if (!modal || !content) return;
-
-    // Сбрасываем визуальное состояние кнопок к "Чату" перед закрытием
-    if (typeof switchMode === 'function') {
-        switchMode('chat');
-    }
 
     content.classList.replace('scale-100', 'scale-95');
     content.classList.replace('opacity-100', 'opacity-0');
@@ -245,8 +288,6 @@ document.addEventListener('DOMContentLoaded', () => {
  * 9. ГЛОБАЛЬНЫЙ ОБРАБОТЧИК КЛИКОВ
  */
 document.addEventListener('click', (e) => {
-    
-    // 9.1 Модальное окно
     const trigger = e.target.closest('.trigger-callback');
     if (trigger) {
         const isMobile = window.innerWidth <= 768;
@@ -255,10 +296,8 @@ document.addEventListener('click', (e) => {
         if (!isMobile || (isMobile && !isPhoneLink)) {
             e.preventDefault();
             let productName = '';
-
             const row = trigger.closest('tr');
             if (row) {
-                // 1. Ищем заголовок с colspan выше по таблице (для первой таблицы)
                 let prevRow = row.previousElementSibling;
                 while (prevRow) {
                     const headerCell = prevRow.querySelector('td[colspan]');
@@ -268,8 +307,6 @@ document.addEventListener('click', (e) => {
                     }
                     prevRow = prevRow.previousElementSibling;
                 }
-
-                // 2. Если не нашли выше, проверяем первую ячейку строки (для второй таблицы)
                 if (!productName) {
                     const firstCell = row.querySelector('td:first-child');
                     if (firstCell && firstCell.innerText.trim().length > 1) {
@@ -277,54 +314,41 @@ document.addEventListener('click', (e) => {
                     }
                 }
             }
-
-            // 3. Логика для мобильных карточек (H3)
             if (!productName) {
                 const card = trigger.closest('.p-5') || trigger.closest('section');
                 const h3Title = card?.querySelector('h3');
                 if (h3Title) productName = h3Title.innerText.trim();
             }
-
             openCallbackModal(productName);
         }
     }
 
-    // 9.2 Анимация корзины
     const buyBtn = e.target.closest('.buy-btn') || (e.target.closest('button') && e.target.innerText.toLowerCase().includes('корзину'));
     if (buyBtn) {
         animateCart();
     }
 
-    // 9.3 Закрытие модалки
     const modal = document.getElementById('callback-modal');
     if (modal && (e.target.closest('#close-modal') || e.target === modal)) {
         closeCallbackModal();
     }
 });
 
-    /**
- * 10. ОБРАБОТКА ОТПРАВКИ ФОРМЫ В TELEGRAM
- * Данный блок перехватывает событие отправки формы, собирает данные 
- * и передает их в PHP-обработчик (send.php) без перезагрузки страницы.
+/**
+ * 10. ОБРАБОТКА ОТПРАВКИ ФОРМЫ
  */
 document.addEventListener('submit', async (e) => {
-    // Проверяем, что отправлена именно наша форма заказа
     if (e.target && e.target.id === 'callbackForm') {
-        e.preventDefault(); // Блокируем стандартную перезагрузку страницы
-        
+        e.preventDefault();
         const form = e.target;
         const btn = form.querySelector('button[type="submit"]');
         const originalBtnText = btn.innerText;
-
-        // Подготавливаем данные формы для отправки
         const formData = new FormData(form);
 
         try {
-            // Визуальная индикация процесса отправки
             btn.disabled = true;
             btn.innerText = 'ОТПРАВКА...';
 
-            // Отправляем данные в PHP-файл методом POST
             const response = await fetch('send.php', {
                 method: 'POST',
                 body: formData
@@ -332,67 +356,19 @@ document.addEventListener('submit', async (e) => {
 
             const result = await response.text();
 
-            // Если сервер вернул "success", значит бот отправил сообщение в ТГ
             if (result.trim() === 'success') {
                 alert('Спасибо! Заявка принята. Мы свяжемся с вами в ближайшее время.');
-                form.reset(); // Очищаем поля формы
-                
-                // Закрываем модальное окно, если функция закрытия доступна
-                if (typeof closeCallbackModal === 'function') {
-                    closeCallbackModal();
-                }
+                form.reset();
+                closeCallbackModal();
             } else {
                 throw new Error('Ошибка сервера');
             }
         } catch (error) {
-            // В случае сетевой ошибки или сбоя PHP
             alert('Произошла ошибка при отправке. Пожалуйста, позвоните нам по телефону.');
-            console.error('Ошибка отправки в Telegram:', error);
+            console.error('Ошибка отправки:', error);
         } finally {
-            // Возвращаем кнопку в исходное состояние
             btn.disabled = false;
             btn.innerText = originalBtnText;
         }
     }
-
-    function switchFormMode(mode) {
-        const btnChat = document.getElementById('btn-chat');
-        const btnCall = document.getElementById('btn-call');
-        const phoneWrap = document.getElementById('phone-field-wrapper');
-        const extraFields = document.getElementById('extra-fields');
-        const subject = document.getElementById('form-subject');
-    
-        if (mode === 'chat') {
-            // Показываем поля чата, скрываем телефон
-            phoneWrap.classList.add('hidden');
-            extraFields.classList.remove('hidden');
-            subject.value = "Письмо из чата";
-    
-            // Кнопка Чат -> Активная (Белая)
-            btnChat.className = "flex-1 py-2.5 px-2 bg-white shadow-sm rounded-xl border border-gray-200 transition-all flex items-center justify-center gap-2 border-0 outline-none cursor-pointer group";
-            btnChat.querySelector('i').className = "fas fa-comments text-primary-green text-sm";
-            btnChat.querySelector('span').className = "text-[9px] font-bold uppercase tracking-wider text-primary-green";
-    
-            // Кнопка Звонок -> Пассивная (Серая)
-            btnCall.className = "flex-1 py-2.5 px-2 bg-gray-50 hover:bg-gray-100 rounded-xl border border-gray-100 transition-all flex items-center justify-center gap-2 border-0 outline-none cursor-pointer group";
-            btnCall.querySelector('i').className = "fas fa-phone-alt text-gray-400 group-hover:text-primary-green text-sm";
-            btnCall.querySelector('span').className = "text-[9px] font-bold uppercase tracking-wider text-gray-500";
-        } else {
-            // Показываем телефон, скрываем чат
-            phoneWrap.classList.remove('hidden');
-            extraFields.classList.add('hidden');
-            subject.value = "Обратный звонок";
-    
-            // Кнопка Звонок -> Активная (Белая)
-            btnCall.className = "flex-1 py-2.5 px-2 bg-white shadow-sm rounded-xl border border-gray-200 transition-all flex items-center justify-center gap-2 border-0 outline-none cursor-pointer group";
-            btnCall.querySelector('i').className = "fas fa-phone-alt text-primary-green text-sm";
-            btnCall.querySelector('span').className = "text-[9px] font-bold uppercase tracking-wider text-primary-green";
-    
-            // Кнопка Чат -> Пассивная (Серая)
-            btnChat.className = "flex-1 py-2.5 px-2 bg-gray-50 hover:bg-gray-100 rounded-xl border border-gray-100 transition-all flex items-center justify-center gap-2 border-0 outline-none cursor-pointer group";
-            btnChat.querySelector('i').className = "fas fa-comments text-gray-400 group-hover:text-primary-green text-sm";
-            btnChat.querySelector('span').className = "text-[9px] font-bold uppercase tracking-wider text-gray-500";
-        }
-    }
-
 });
