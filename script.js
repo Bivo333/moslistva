@@ -427,24 +427,30 @@ function initGalleryFilter() {
 
     if (filterButtons.length === 0 || cards.length === 0) return;
 
+    // Устанавливаем начальное активное состояние для кнопки "Все"
+    const defaultBtn = document.querySelector('[data-filter="all"]');
+    if (defaultBtn) defaultBtn.classList.add('is-active');
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const filterValue = button.getAttribute('data-filter');
 
-            // Смена активного стиля кнопок
+            // Смена стилей кнопок
             filterButtons.forEach(btn => {
-                btn.classList.remove('bg-primary-green', 'text-white');
+                btn.classList.remove('active', 'bg-primary-green', 'text-white');
                 btn.classList.add('bg-white', 'text-dark-green');
             });
-            button.classList.add('bg-primary-green', 'text-white');
-            button.classList.remove('bg-white', 'text-dark-green');
+            
+            button.classList.add('active');
 
             // Фильтрация карточек
             cards.forEach(card => {
                 const category = card.getAttribute('data-category');
                 if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'block'; // Используем display для надежности
                     card.classList.remove('hidden');
                 } else {
+                    card.style.display = 'none';
                     card.classList.add('hidden');
                 }
             });
@@ -452,11 +458,12 @@ function initGalleryFilter() {
     });
 }
 
-// Добавляем вызов функции в общий список инициализации
-document.addEventListener('DOMContentLoaded', () => {
-    // Ждем микропаузу, чтобы все компоненты (если они есть) успели вставиться в DOM
-    setTimeout(initGalleryFilter, 100);
-});
+// Инициализация
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGalleryFilter);
+} else {
+    initGalleryFilter();
+}
 
 /**
  * 12. ИНИЦИАЛИЗАЦИЯ ПРОСМОТРА КАРТИНОК (FANCYBOX)
