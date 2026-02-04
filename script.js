@@ -417,3 +417,43 @@ document.addEventListener('submit', async (e) => {
         }
     }
 });
+
+/**
+ * 11. ФИЛЬТРАЦИЯ ГАЛЕРЕИ (РАБОТЫ)
+ */
+function initGalleryFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.product-card');
+
+    if (filterButtons.length === 0 || cards.length === 0) return;
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterValue = button.getAttribute('data-filter');
+
+            // Смена активного стиля кнопок
+            filterButtons.forEach(btn => {
+                btn.classList.remove('bg-primary-green', 'text-white');
+                btn.classList.add('bg-white', 'text-dark-green');
+            });
+            button.classList.add('bg-primary-green', 'text-white');
+            button.classList.remove('bg-white', 'text-dark-green');
+
+            // Фильтрация карточек
+            cards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+}
+
+// Добавляем вызов функции в общий список инициализации
+document.addEventListener('DOMContentLoaded', () => {
+    // Ждем микропаузу, чтобы все компоненты (если они есть) успели вставиться в DOM
+    setTimeout(initGalleryFilter, 100);
+});
