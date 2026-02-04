@@ -435,14 +435,21 @@ function initGalleryFilter() {
             // 2. Добавляем класс active нажатой кнопке
             button.classList.add('active');
 
-            // 3. Логика фильтрации карточек
+            // 3. Логика фильтрации карточек и Fancybox
             const filterValue = button.getAttribute('data-filter');
+            
             cards.forEach(card => {
                 const category = card.getAttribute('data-category');
+                const link = card.querySelector('a[data-fancybox]');
+                
                 if (filterValue === 'all' || category === filterValue) {
                     card.classList.remove('hidden');
+                    // Если карточка видна, возвращаем ей участие в основной галерее
+                    if (link) link.setAttribute('data-fancybox', 'gallery');
                 } else {
                     card.classList.add('hidden');
+                    // Если карточка скрыта, меняем имя группы, чтобы Fancybox её игнорировал
+                    if (link) link.setAttribute('data-fancybox', 'hidden');
                 }
             });
         });
@@ -459,16 +466,8 @@ if (document.readyState === 'loading') {
 /**
  * 12. ИНИЦИАЛИЗАЦИЯ ПРОСМОТРА КАРТИНОК (FANCYBOX)
  */
-Fancybox.bind("[data-fancybox]", {
-    // Эта функция проверяет, виден ли элемент на странице
-    // Если карточка скрыта (hidden), Fancybox пропустит её при листовке
-    filter: (instance, slide) => {
-        const el = slide.triggerEl;
-        // Проверяем, не скрыт ли сам элемент или его родители
-        return el.offsetParent !== null;
-    },
-
-    // Твои настройки интерфейса
+// Привязываемся только к тем элементам, у которых группа "gallery"
+Fancybox.bind('[data-fancybox="gallery"]', {
     Hash: false,
     Thumbs: {
         autoStart: false,
@@ -480,18 +479,13 @@ Fancybox.bind("[data-fancybox]", {
             right: ["iterateZoom", "slideshow", "fullScreen", "download", "thumbs", "close"],
         },
     },
-
-    // Настройки для мобильных (скорость и свайпы)
     Carousel: {
-        friction: 0.8, // Скорость анимации (меньше = быстрее)
+        friction: 0.8,
     },
-
-    // Настройки тача (закрытие свайпом вниз/вверх)
     Images: {
         Panzoom: {
             maxScale: 3,
         },
     },
-
     showClass: "f-fadeIn",
 });
