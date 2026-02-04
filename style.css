@@ -231,16 +231,25 @@ body.overflow-hidden {
     }
 }
 
-/* 1. Стиль для активной кнопки (нажатой) */
-.filter-btn.active {
-    background-color: #2D5D42 !important; /* Твой зеленый */
-    color: white !important;
-    cursor: default; /* Убираем указатель, так как кнопка уже нажата */
-    pointer-events: none; /* Это полностью отключает реакцию на мышь (подсветку) */
+/* Базовое состояние кнопки (белая) */
+.filter-btn {
+    background-color: #FFFFFF !important;
+    color: #1B3022 !important;
+    transition: all 0.3s ease;
 }
 
-/* 2. Стиль наведения для ВСЕХ ОСТАЛЬНЫХ кнопок */
-.filter-btn:not(.active):hover {
-    background-color: #FFB800 !important; /* Твой желтый */
-    color: #1B3022 !important; /* Темный текст для контраста */
+/* Желтый ховер ТОЛЬКО для ПК (на телефонах его не будет) */
+@media (hover: hover) {
+    .filter-btn:not(.active):hover {
+        background-color: #FFB800 !important; /* Желтый при наведении */
+        color: #1B3022 !important;
+    }
+}
+
+/* Активная кнопка (зеленая) */
+.filter-btn.active {
+    background-color: #2D5D42 !important; /* Твой зеленый */
+    color: #FFFFFF !important;
+    pointer-events: none; /* Запрещает наведение и повторные клики */
+    cursor: default;
 }

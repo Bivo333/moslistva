@@ -425,32 +425,23 @@ function initGalleryFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.product-card');
 
-    if (filterButtons.length === 0 || cards.length === 0) return;
-
-    // Устанавливаем начальное активное состояние для кнопки "Все"
-    const defaultBtn = document.querySelector('[data-filter="all"]');
-    if (defaultBtn) defaultBtn.classList.add('is-active');
+    if (!filterButtons.length) return;
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const filterValue = button.getAttribute('data-filter');
-
-            // Смена стилей кнопок
-            filterButtons.forEach(btn => {
-                btn.classList.remove('active', 'bg-primary-green', 'text-white');
-                btn.classList.add('bg-white', 'text-dark-green');
-            });
+            // 1. Убираем класс active у всех кнопок
+            filterButtons.forEach(btn => btn.classList.remove('active'));
             
+            // 2. Добавляем класс active нажатой кнопке
             button.classList.add('active');
 
-            // Фильтрация карточек
+            // 3. Логика фильтрации карточек
+            const filterValue = button.getAttribute('data-filter');
             cards.forEach(card => {
                 const category = card.getAttribute('data-category');
                 if (filterValue === 'all' || category === filterValue) {
-                    card.style.display = 'block'; // Используем display для надежности
                     card.classList.remove('hidden');
                 } else {
-                    card.style.display = 'none';
                     card.classList.add('hidden');
                 }
             });
