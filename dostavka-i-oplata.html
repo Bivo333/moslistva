@@ -29,12 +29,36 @@
     <div id="nav-res" class="sticky top-0 z-50"></div>
     <div id="breadcrumbs-res"></div>
 
-    <main class="py-8 md:py-16">
+    <main class="py-2 md:pt-2 md:py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-3xl md:text-5xl font-black text-dark-green mb-8 md:mb-12 uppercase tracking-tight text-center md:text-left">
                 Доставка и оплата
             </h1>
             
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div class="space-y-6 text-base md:text-lg text-gray-700 leading-relaxed">
+                    <p>
+                        <strong class="text-primary-green">МосЛиства</strong> — это надежный поставщик высококачественных пиломатериалов из сибирской лиственницы в Москве и Московской области. Мы специализируемся на продукции, которая сочетает в себе природную долговечность и эстетику.
+                    </p>
+                    <p>
+                        Наше производство расположено в экологически чистых регионах, что позволяет нам контролировать весь цикл: от отбора древесины до финальной обработки каждой доски.
+                    </p>
+                    
+                    <button id="about-callback-btn"
+                        class="trigger-callback block w-full md:inline-block md:w-auto text-center bg-gold-accent text-dark-green px-8 py-4 md:px-10 md:py-5 rounded-xl font-black uppercase text-sm shadow-xl transition-all md:hover:scale-105 active:scale-95">
+                        Связаться с нами
+                    </button>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-[2rem] md:rounded-[2.5rem] shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <img src="/images/ui/dostavka-banner.webp"
+                        alt="Доставка продукции МосЛиства"
+                        class="w-full h-64 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500">
+                    </div>
+                </div>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
                 
                 <div class="bg-white p-8 md:p-10 rounded-3xl shadow-lg border-b-4 border-gold-accent transition-all md:hover:-translate-y-2 text-center md:text-left">

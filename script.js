@@ -185,6 +185,9 @@ function updateBreadcrumbs() {
         'dostavka-i-oplata.html': 'Доставка',
         'o-kompanii.html': 'О компании',
         'kontakty.html': 'Контакты',
+        'politika-konfidencialnosti.html': 'Политика конфиденциальности',
+        'politika-obrabotki-cookie.html': 'Политика обработки файлов cookie',
+        'soglasie-na-reklamu.html': 'Согласие на рекламу',
         '404.html': 'Ошибка 404'
     };
 
