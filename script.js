@@ -216,7 +216,8 @@ function updateBreadcrumbs() {
     'pilomaterialy.html': 'Пиломатериалы',
     'planken.html': 'Планкен',
     'pogonazh.html': 'Погонаж',
-    'vagonka.html': 'Вагонка'
+    'vagonka.html': 'Вагонка',
+    'sorta.html': 'Сорта'
     };
 
     const fullPath = window.location.pathname;
@@ -449,7 +450,8 @@ document.addEventListener('DOMContentLoaded', () => {
         loadComponent('nav-res', '/components/nav.html'),
         loadComponent('breadcrumbs-res', '/components/breadcrumbs.html'),
         loadComponent('footer-res', '/components/footer.html'),
-        loadComponent('callback-modal-res', '/components/zakaz-zvonka.html')
+        loadComponent('callback-modal-res', '/components/zakaz-zvonka.html'),
+        loadComponent('sorta-res', '/components/sorta.html')
     ]).then(() => {
         // 2. Проверяем, не находимся ли мы на главной
         const isIndex = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');

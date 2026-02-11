@@ -80,6 +80,10 @@ const Router = {
                     if (document.getElementById('catalog-sm-res')) {
                         tasks.push(window.loadComponent('catalog-sm-res', '/components/blok-kataloga-sm.html'));
                     }
+
+                    if (document.getElementById('sorta-res')) {
+                        tasks.push(window.loadComponent('sorta-res', '/components/sorta.html'));
+                    }
     
                     // Ждем загрузки всех найденных компонентов
                     if (tasks.length > 0) await Promise.all(tasks);
