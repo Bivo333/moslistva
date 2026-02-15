@@ -1,53 +1,84 @@
-<div class="my-2 bg-white rounded-3xl p-6 shadow-xl border border-gray-50">
-    <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-black text-dark-green mb-6 text-center">
-            Какой сорт выбрать для вашего проекта?
-        </h2>
-        <p class="text-gray-600 mb-8 text-center leading-relaxed">
-            Пиломатериалы из лиственницы делятся на классы в зависимости от наличия природных пороков древесины. 
-            Вне зависимости от сорта, вы получаете материал высокой плотности, устойчивый к влаге и гниению.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="flex gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gold-accent/20 rounded-full flex items-center justify-center text-dark-green font-black text-lg">Э</div>
-                <div>
-                    <h3 class="font-bold text-lg text-dark-green mb-2">Сорт «Экстра» (Премиум)</h3>
-                    <p class="text-sm text-gray-600 leading-snug">
-                        Идеально гладкая поверхность. Полное отсутствие сучков, смоляных карманов и трещин на лицевой стороне. Выбор для элитных террас и интерьеров, где важна безупречная эстетика.
-                    </p>
+<section class="max-w-4xl mx-auto">
+    <h2 class="text-xl font-black text-dark-green uppercase my-2 tracking-tight">
+        Подробное описание сортов
+    </h2>
+    
+    <div class="space-y-2">
+        <div class="border-b border-gray-200">
+            <input type="checkbox" id="sort-e" class="peer hidden">
+            <label for="sort-e" class="flex items-center justify-between py-4 cursor-pointer group select-none">
+                <div class="flex items-center gap-4">
+                    <span class="text-[10px] font-black px-2 py-1 bg-[#FFB800] text-white rounded">Э</span>
+                    <span class="font-bold text-dark-green group-hover:text-primary-green transition-colors">Сорт «Экстра»</span>
+                </div>
+                <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 transition-all duration-300 peer-checked:bg-dark-green">
+                    <i class="fas fa-chevron-down text-[12px] text-gray-400 transition-transform duration-500 peer-checked:rotate-180 peer-checked:text-dark-green"></i>
+                </div>
+            </label>
+            <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:max-h-60">
+                <div class="pb-6 text-sm text-gray-500 leading-relaxed pl-12 border-l-2 border-[#FFB800]/30 ml-3">
+                    Идеально гладкая поверхность. Полное отсутствие сучков, смоляных карманов и трещин на лицевой стороне. 
+                    Выбор для элитных террас и интерьеров, где важна безупречная эстетика.
                 </div>
             </div>
+        </div>
 
-            <div class="flex gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-primary-green/10 rounded-full flex items-center justify-center text-primary-green font-black text-lg">П</div>
-                <div>
-                    <h3 class="font-bold text-lg text-dark-green mb-2">Сорт «Прима»</h3>
-                    <p class="text-sm text-gray-600 leading-snug">
-                        Допускается 1-2 маленьких здоровых сучка или крошечный смоляной кармашек на доску. Визуально практически не отличим от Экстры, но имеет более выгодную цену.
-                    </p>
+        <div class="border-b border-gray-200">
+            <input type="checkbox" id="sort-p" class="peer hidden">
+            <label for="sort-p" class="flex items-center justify-between py-4 cursor-pointer group select-none">
+                <div class="flex items-center gap-4">
+                    <span class="text-[10px] font-black px-2 py-1 bg-primary-green/20 text-primary-green rounded">П</span>
+                    <span class="font-bold text-dark-green group-hover:text-primary-green transition-colors">Сорт «Прима»</span>
+                </div>
+                <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 transition-all duration-300">
+                    <i class="fas fa-chevron-down text-[12px] text-gray-400 transition-transform duration-500 peer-checked:rotate-180"></i>
+                </div>
+            </label>
+            <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:max-h-60">
+                <div class="pb-6 text-sm text-gray-500 leading-relaxed pl-12 border-l-2 border-primary-green/30 ml-3">
+                    Допускается 1-2 маленьких здоровых сучка или крошечный смоляной кармашек на доску. 
+                    Визуально практически не отличим от Экстры, но имеет более выгодную цену.
                 </div>
             </div>
+        </div>
 
-            <div class="flex gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 font-black text-lg">АВ</div>
-                <div>
-                    <h3 class="font-bold text-lg text-dark-green mb-2">Сорт «АВ» (Классика)</h3>
-                    <p class="text-sm text-gray-600 leading-snug">
-                        Идеальный выбор, рисунок натурального дерева с «живой» текстурой. Допускаются редкие здоровые сросшиеся сучки, не более 2-3 штук на погонный метр. Оптимальное соотношение цены и качества.
-                    </p>
+        <div class="border-b border-gray-200">
+            <input type="checkbox" id="sort-ab" class="peer hidden">
+            <label for="sort-ab" class="flex items-center justify-between py-4 cursor-pointer group select-none">
+                <div class="flex items-center gap-4">
+                    <span class="text-[10px] font-black px-2 py-1 bg-gray-100 text-gray-600 rounded">АВ</span>
+                    <span class="font-bold text-dark-green group-hover:text-primary-green transition-colors">Сорт «АВ» (Классика)</span>
+                </div>
+                <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 transition-all duration-300">
+                    <i class="fas fa-chevron-down text-[12px] text-gray-400 transition-transform duration-500 peer-checked:rotate-180"></i>
+                </div>
+            </label>
+            <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:max-h-60">
+                <div class="pb-6 text-sm text-gray-500 leading-relaxed pl-12 border-l-2 border-gray-200 ml-3">
+                    Идеальный выбор, рисунок натурального дерева с «живой» текстурой. 
+                    Допускаются редкие здоровые сросшиеся сучки, не более 2-3 штук на погонный метр. 
+                    Оптимальное соотношение цены и качества.
                 </div>
             </div>
-
-            <div class="flex gap-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 font-black text-lg">ВС</div>
-                <div>
-                    <h3 class="font-bold text-lg text-dark-green mb-2">Сорт «ВС» (Эконом)</h3>
-                    <p class="text-sm text-gray-600 leading-snug">
-                        Бюджетное решение, натуральный рисунок дерева. Допускаются здоровые светлые сучки (невыпадающие), небольшие трещинки, не влияющие на прочность. Идеально подходит под покраску укрывными маслами.
-                    </p>
+        </div>
+        
+        <div class="border-b border-gray-200">
+            <input type="checkbox" id="sort-bc" class="peer hidden">
+            <label for="sort-bc" class="flex items-center justify-between py-4 cursor-pointer group select-none">
+                <div class="flex items-center gap-4">
+                    <span class="text-[10px] font-black px-2 py-1 bg-gray-50 text-gray-400 rounded">ВС</span>
+                    <span class="font-bold text-dark-green group-hover:text-primary-green transition-colors">Сорт «ВС» (Эконом)</span>
+                </div>
+                <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 transition-all duration-300">
+                    <i class="fas fa-chevron-down text-[12px] text-gray-400 transition-transform duration-500 peer-checked:rotate-180"></i>
+                </div>
+            </label>
+            <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:max-h-60">
+                <div class="pb-6 text-sm text-gray-500 leading-relaxed pl-12 border-l-2 border-gray-100 ml-3">
+                    Бюджетное решение, натуральный рисунок дерева. Допускаются здоровые светлые сучки (невыпадающие), 
+                    небольшие трещинки, не влияющие на прочность. Идеально подходит под покраску укрывными маслами.
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>

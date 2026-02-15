@@ -51,11 +51,15 @@
                         <table class="w-full text-left border-collapse">
                             <thead class="bg-primary-green text-white">
                                 <tr>
-                                    <th class="p-2 uppercase text-[10px] tracking-wider font-bold border-r border-white/10">Размер (мм)</th>
-                                    <th class="p-2 uppercase text-[10px] tracking-wider font-bold text-center border-r border-white/10">Экстра</th>
-                                    <th class="p-2 uppercase text-[10px] tracking-wider font-bold text-center border-r border-white/10">Прима</th>
-                                    <th class="p-2 uppercase text-[10px] tracking-wider font-bold text-center border-r border-white/10">АВ</th>
-                                    <th class="p-2 uppercase text-[10px] tracking-wider font-bold text-center">ВС</th>
+                                    <th class="p-2 uppercase text-[10px] tracking-wider font-bold border-r border-white/10">Размер (мм)</th>                                    
+                                    <th class="sort-header p-2 uppercase text-[10px] tracking-wider font-bold text-center border-r border-white/10 cursor-pointer transition-colors duration-200" data-sort="extra">
+                                        Экстра</th>
+                                    <th class="sort-header p-2 uppercase text-[10px] tracking-wider font-bold text-center border-r border-white/10 cursor-pointer transition-colors duration-200" data-sort="prima">
+                                        Прима</th>
+                                    <th class="sort-header p-2 uppercase text-[10px] tracking-wider font-bold text-center border-r border-white/10 cursor-pointer transition-colors duration-200" data-sort="ab">
+                                        АВ</th>
+                                    <th class="sort-header p-2 uppercase text-[10px] tracking-wider font-bold text-center cursor-pointer transition-colors duration-200" data-sort="bc">
+                                        ВС</th>
                                     <th class="p-2 w-10"></th>
                                 </tr>
                             </thead>
@@ -198,7 +202,7 @@
                         </p>
                     </div>                   
 
-                    <div class="flex flex-wrap items-center gap-4 mt-6">
+                    <div class="flex flex-wrap items-center gap-4 my-2">
                         <button class="trigger-callback group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-gold-accent px-8 py-3.5 font-bold text-dark-green transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(212,175,55,0.5)] active:translate-y-0 active:scale-95 shadow-[0_4px_15px_rgba(212,175,55,0.3)]">
                             <span class="relative z-10 flex items-center gap-2 text-sm">
                                 <i class="fas fa-calculator"></i>
@@ -208,108 +212,14 @@
                             <div class="absolute left-[-100%] top-0 h-full w-1/2 -skew-x-[25deg] bg-gradient-to-r from-transparent via-white/50 to-transparent transition-all duration-700 group-hover:left-[150%]"></div>
                         </button>
                     
-                        <a href="tel:+79775007879" class="flex items-center justify-center w-12 h-12 rounded-xl bg-white text-dark-green border border-gray-100 hover:border-gold-accent hover:text-gold-accent transition-all duration-300 shadow-sm">
+                        <a href="tel:+79775007879" class="trigger-callback group flex items-center justify-center w-12 h-12 rounded-xl bg-white text-dark-green border border-gray-100 hover:border-gold-accent hover:text-gold-accent transition-all duration-300 shadow-sm">
                             <i class="fas fa-phone-alt"></i>
                         </a>
                     </div>
                 </div>
             </div>
-
-            <section class="max-w-4xl mx-auto px-0 py-12">
-                <h2 class="text-xl font-black text-dark-green uppercase mb-6 tracking-tight">
-                    Подробное описание сортов
-                </h2>
-                
-                <div class="space-y-2">
-                    <div class="border-b border-gray-200">
-                        <input type="checkbox" id="sort-e" class="peer hidden">
-                        <label for="sort-e" class="flex items-center justify-between py-4 cursor-pointer group select-none">
-                            <div class="flex items-center gap-4">
-                                <span class="text-[10px] font-black px-2 py-1 bg-[#d4af37] text-white rounded">Э</span>
-                                <span class="font-bold text-dark-green group-hover:text-primary-green transition-colors">Сорт «Экстра»</span>
-                            </div>
-                            <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 transition-all duration-300 peer-checked:bg-dark-green">
-                                <i class="fas fa-chevron-down text-[12px] text-gray-400 transition-transform duration-500 peer-checked:rotate-180 peer-checked:text-dark-green"></i>
-                            </div>
-                        </label>
-                        <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:max-h-60">
-                            <div class="pb-6 text-sm text-gray-500 leading-relaxed pl-12 border-l-2 border-[#d4af37]/30 ml-3">
-                                Идеально гладкая поверхность. Полное отсутствие сучков, смоляных карманов и трещин на лицевой стороне. 
-                                Выбор для элитных террас и интерьеров, где важна безупречная эстетика.
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="border-b border-gray-200">
-                        <input type="checkbox" id="sort-p" class="peer hidden">
-                        <label for="sort-p" class="flex items-center justify-between py-4 cursor-pointer group select-none">
-                            <div class="flex items-center gap-4">
-                                <span class="text-[10px] font-black px-2 py-1 bg-primary-green/20 text-primary-green rounded">П</span>
-                                <span class="font-bold text-dark-green group-hover:text-primary-green transition-colors">Сорт «Прима»</span>
-                            </div>
-                            <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 transition-all duration-300">
-                                <i class="fas fa-chevron-down text-[12px] text-gray-400 transition-transform duration-500 peer-checked:rotate-180"></i>
-                            </div>
-                        </label>
-                        <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:max-h-60">
-                            <div class="pb-6 text-sm text-gray-500 leading-relaxed pl-12 border-l-2 border-primary-green/30 ml-3">
-                                Допускается 1-2 маленьких здоровых сучка или крошечный смоляной кармашек на доску. 
-                                Визуально практически не отличим от Экстры, но имеет более выгодную цену.
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="border-b border-gray-200">
-                        <input type="checkbox" id="sort-ab" class="peer hidden">
-                        <label for="sort-ab" class="flex items-center justify-between py-4 cursor-pointer group select-none">
-                            <div class="flex items-center gap-4">
-                                <span class="text-[10px] font-black px-2 py-1 bg-gray-100 text-gray-600 rounded">АВ</span>
-                                <span class="font-bold text-dark-green group-hover:text-primary-green transition-colors">Сорт «АВ» (Классика)</span>
-                            </div>
-                            <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 transition-all duration-300">
-                                <i class="fas fa-chevron-down text-[12px] text-gray-400 transition-transform duration-500 peer-checked:rotate-180"></i>
-                            </div>
-                        </label>
-                        <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:max-h-60">
-                            <div class="pb-6 text-sm text-gray-500 leading-relaxed pl-12 border-l-2 border-gray-200 ml-3">
-                                Идеальный выбор, рисунок натурального дерева с «живой» текстурой. 
-                                Допускаются редкие здоровые сросшиеся сучки, не более 2-3 штук на погонный метр. 
-                                Оптимальное соотношение цены и качества.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="border-b border-gray-200">
-                        <input type="checkbox" id="sort-bc" class="peer hidden">
-                        <label for="sort-bc" class="flex items-center justify-between py-4 cursor-pointer group select-none">
-                            <div class="flex items-center gap-4">
-                                <span class="text-[10px] font-black px-2 py-1 bg-gray-50 text-gray-400 rounded">ВС</span>
-                                <span class="font-bold text-dark-green group-hover:text-primary-green transition-colors">Сорт «ВС» (Эконом)</span>
-                            </div>
-                            <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 transition-all duration-300">
-                                <i class="fas fa-chevron-down text-[12px] text-gray-400 transition-transform duration-500 peer-checked:rotate-180"></i>
-                            </div>
-                        </label>
-                        <div class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out peer-checked:max-h-60">
-                            <div class="pb-6 text-sm text-gray-500 leading-relaxed pl-12 border-l-2 border-gray-100 ml-3">
-                                Бюджетное решение, натуральный рисунок дерева. Допускаются здоровые светлые сучки (невыпадающие), 
-                                небольшие трещинки, не влияющие на прочность. Идеально подходит под покраску укрывными маслами.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <style>
-                /* Плавный поворот иконки и открытие текста через Tailwind Peer */
-                .peer:checked ~ label i {
-                    transform: rotate(180deg);
-                    color: #268546; /* Цвет галочки при открытии */
-                }
-                .peer:checked ~ div {
-                    max-height: 500px; /* Запас высоты для текста */
-                }
-            </style>
+            <div id="sorta-res"></div>
+        </section>
     </main>
 </body>
 </html>

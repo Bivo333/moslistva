@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 /* =========================================
    1. БАЗОВЫЕ НАСТРОЙКИ (GLOBAL)
    ========================================= */
@@ -256,3 +260,23 @@ body.overflow-hidden {
 
 /* В файле style.css */
 [data-fancybox] { cursor: zoom-in; }
+
+/* Плавный поворот иконки и открытие текста через Tailwind Peer */
+.peer:checked ~ label i {
+    transform: rotate(180deg);
+    color: #268546; /* Цвет галочки при открытии */
+}
+.peer:checked ~ div {
+    max-height: 500px; /* Запас высоты для текста */
+}
+
+/* Подсветка сортов в шапке таблицы */
+.sort-header:hover {
+    color: #FFB800 !important; /* Твой золотой */
+}
+
+/* Опционально: легкое подчеркивание при наведении, чтобы усилить эффект ссылки */
+.sort-header:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}

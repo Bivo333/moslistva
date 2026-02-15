@@ -4,6 +4,45 @@
 window.isRouterActive = true; 
 
 /**
+ * ЛОГИКА ПЕРЕХОДА К ОПИСАНИЮ СОРТОВ (SORT_ACCORDION_INTERACTION)
+ * Позволяет при клике на сорт в таблице цен скроллить к аккордеону и открывать его
+ */
+function initTableToAccordion() {
+    const sortHeaders = document.querySelectorAll('.sort-header');
+
+    sortHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const targetSort = header.getAttribute('data-sort'); // Получаем extra, prima, ab, bc
+            const accordionSection = document.getElementById('sorta-res');
+
+            if (accordionSection) {
+                // 1. Плавный скролл к секции
+                accordionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // 2. Находим нужный чекбокс в аккордеоне
+                // Сопоставляем data-sort из таблицы с ID из твоего HTML
+                const map = {
+                    'extra': 'sort-e',
+                    'prima': 'sort-p',
+                    'ab': 'sort-ab',
+                    'bc': 'sort-bc'
+                };
+
+                const checkboxId = map[targetSort];
+                const checkbox = document.getElementById(checkboxId);
+                
+                if (checkbox) {
+                    // Снимаем выбор со всех, если хочешь чтобы был открыт только один
+                    document.querySelectorAll('input[id^="sort-"]').forEach(cb => cb.checked = false);
+                    // Открываем нужный
+                    checkbox.checked = true;
+                }
+            }
+        });
+    });
+}
+
+/**
  * ГЛОБАЛЬНАЯ ИНИЦИАЛИЗАЦИЯ (Для SPA)
  */
 function initAllScripts() {
@@ -15,7 +54,12 @@ function initAllScripts() {
     initHeroSlider(); 
     initGalleryFilter(); 
     initFancybox(); 
-    initPhoneMask(); 
+    initPhoneMask();
+    // Добавляем связь таблицы цен с описанием сортов
+    initTableToAccordion();
+
+    // Запуск роутера всегда должен быть последним
+    if (window.AppRouter) window.AppRouter.init();
 }
 
 /**
