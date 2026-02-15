@@ -530,3 +530,29 @@ document.addEventListener('DOMContentLoaded', () => {
         document.head.appendChild(maskScript);
     }
 });
+
+// 1. Создаем короткий псевдоним для функции обновления итогов
+const update = () => typeof updateOrderSummary === 'function' && updateOrderSummary();
+
+// 2. Функция переключения панели
+function toggleQty(btn) {
+    const group = btn.closest('.sort-selection-group');
+    group.classList.toggle('selected');
+    update();
+}
+
+// 3. Функция изменения количества
+function changeQty(btn, delta) {
+    const input = btn.parentElement.querySelector('input');
+    // Берем текущее число, прибавляем дельту, но не даем упасть ниже 0
+    input.value = Math.max(0, (parseInt(input.value) || 0) + delta);
+    update();
+}
+
+// 4. Функция сброса (урна)
+function resetSort(btn) {
+    const group = btn.closest('.sort-selection-group');
+    group.classList.remove('selected');
+    group.querySelector('input').value = 0;
+    update();
+}

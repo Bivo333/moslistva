@@ -280,3 +280,34 @@ body.overflow-hidden {
     text-decoration: underline;
     text-underline-offset: 4px;
 }
+
+/* Состояние, когда сорт выбран */
+.sort-selection-group.selected .qty-panel {
+    max-height: 80px; /* Даем достаточно места для кнопок и мусорки */
+    opacity: 1;
+    margin-top: 4px;
+    overflow: visible; /* Позволяем контенту дышать *
+}
+
+.sort-selection-group.selected .price-cell {
+    border-color: #FFB800; /* Твоя золотая рамка */
+    background-color: white;
+}
+
+/* Чтобы иконка мусорки не искажалась */
+.qty-panel button i {
+    display: block;
+    line-height: 1;
+}
+
+/* Скрываем стандартные стрелки Chrome/Safari/Edge */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+/* Скрываем стрелки в Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

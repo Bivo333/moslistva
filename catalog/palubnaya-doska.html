@@ -111,12 +111,28 @@
                                     <h3 class="font-black text-dark-green uppercase text-sm mb-1">Палубная доска</h3>
                                     <div class="text-[12px] text-gray-500 font-bold">27х140мм 3м,4м</div>
                                 </div>
-                                <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[9px] transition-all active:scale-95">Заказать</button>
+                                <button class="trigger-callback bg-primary-green text-white px-3 py-2 rounded-lg font-black uppercase text-[10px] transition-all active:scale-95">Заказать</button>
                             </div>
-                            <div class="grid grid-cols-4 gap-2 text-center">
-                                <div class="bg-gray-50 py-2 rounded-xl">
-                                    <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
-                                    <div class="text-sm font-black text-primary-green">4000</div>
+                            <div class="grid grid-cols-4 gap-1 text-center">
+                                <div class="sort-selection-group flex flex-col" data-sort="Экстра">
+                                    <button onclick="toggleQty(this)" class="price-cell bg-gray-50 py-1 rounded-xl border-2 border-transparent transition-all active:scale-95 flex flex-col items-center justify-center" data-price="4000">
+                                        <div class="text-[9px] uppercase font-black text-gray-400">Экстра</div>
+                                        <div class="text-sm font-black text-primary-green">4000</div>
+                                    </button>
+                                    
+                                    <div class="qty-panel max-h-0 overflow-hidden transition-all duration-300 opacity-0 flex flex-col items-center">
+                                        <div class="flex items-center justify-between w-full mt-1 bg-gray-100 rounded-lg p-1">
+                                            <button onclick="changeQty(this, -1)"
+                                                class="w-5 h-5 flex items-center justify-center bg-white rounded-md shadow-sm text-[14px] text-dark-green font-bold">-</button>
+                                            <input type="number" value="0" min="0" oninput="updateOrderSummary()" onclick="this.select()"
+                                                class="qty-input w-6 text-center bg-transparent border-none text-[14px] font-black p-0 focus:ring-0 text-dark-green">
+                                            <button onclick="changeQty(this, 1)"
+                                                class="w-5 h-5 flex items-center justify-center bg-white rounded-md shadow-sm text-[14px] text-dark-green font-bold">+</button>
+                                        </div>
+                                        <button onclick="resetSort(this)" class="mt-0 w-8 h-8 flex-shrink-0 flex items-center justify-center text-red-500 hover:bg-red-50 rounded-full transition-all active:scale-90">
+                                            <i class="fas fa-trash-alt text-[14px]"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="bg-gray-50 py-2 rounded-xl">
                                     <div class="text-[9px] uppercase font-black text-gray-400">Прима</div>
