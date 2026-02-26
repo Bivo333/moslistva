@@ -531,28 +531,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// 1. Создаем короткий псевдоним для функции обновления итогов
-const update = () => typeof updateOrderSummary === 'function' && updateOrderSummary();
-
-// 2. Функция переключения панели
 function toggleQty(btn) {
     const group = btn.closest('.sort-selection-group');
     group.classList.toggle('selected');
-    update();
+    // Здесь будет вызов обновления блока заказа
 }
 
-// 3. Функция изменения количества
 function changeQty(btn, delta) {
     const input = btn.parentElement.querySelector('input');
-    // Берем текущее число, прибавляем дельту, но не даем упасть ниже 0
-    input.value = Math.max(0, (parseInt(input.value) || 0) + delta);
-    update();
+    let val = parseInt(input.value) + delta;
+    if (val < 1) val = 1;
+    input.value = val;
+    // Обновление итогов
 }
 
-// 4. Функция сброса (урна)
 function resetSort(btn) {
     const group = btn.closest('.sort-selection-group');
     group.classList.remove('selected');
-    group.querySelector('input').value = 0;
-    update();
+    group.querySelector('input').value = 1;
 }
+
+document.addEventListener('change', function(e) {
+    if (e.target.classList.contains('qty-input')) {
+        // Если в поле пусто (пустая строка)
+        if (e.target.value.trim() === "") {
+            e.target.value = 0; // Принудительно ставим 0
+            
+            // Вызываем пересчет, чтобы итоговая сумма обновилась
+            if (typeof updateOrderSummary === 'function') {
+                updateOrderSummary();
+            }
+        }
+    }
+}, true);
